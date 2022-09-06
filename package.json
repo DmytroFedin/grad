@@ -2,7 +2,7 @@
   "name": "routing",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://grad-backend-server.herokuapp.com:5000/",
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "@react-rxjs/core": "^0.9.4",
     "@react-rxjs/utils": "^0.9.5",
