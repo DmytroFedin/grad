@@ -6,7 +6,7 @@ import Path from './components/routes/menuItem';
 import CardioG from './pages/ProductsGym/Cardio/cardio';
 import Footer from './components/footer/footer';
 import React, { useMemo, useState, useEffect } from "react";
-import {LoadingContext, ProductsContext, BreadcrumbContext, RangeInputContext, MobileViewContext} from './components/useContext/useContext';
+import {LoadingContext, ProductsContext, BreadcrumbContext, RangeInputContext, MobileViewContext, BackendRouteContext} from './components/useContext/useContext';
 import AuthPage from './pages/auth/auth';
 import {
   createSignal,
@@ -30,8 +30,13 @@ const App = () => {
   const loadingValue = useMemo(() => ({ loading, setLoading }), [loading]);
   const [dynamicBreadcrumb, setDynamicBreadcrumb] = useState([]);
   const breadcrumbValue = useMemo(() => ({ dynamicBreadcrumb, setDynamicBreadcrumb }), [dynamicBreadcrumb]);
-  const [RangeInputPrice, setRangeInputPrice] = useState(false);
-  const priceRange = useMemo(() => ({ RangeInputPrice, setRangeInputPrice }), [RangeInputPrice]);
+  const [rangeInputPrice, setRangeInputPrice] = useState(false);
+  const priceRange = useMemo(() => ({ rangeInputPrice, setRangeInputPrice }), [rangeInputPrice]);
+  const [backendRoute, setBackendRoute] = useState();
+  const routeValue = useMemo(() => ({ backendRoute, setBackendRoute }), [backendRoute]);
+
+  setBackendRoute('https://grad-backend-server.herokuapp.com/')
+  
   if (!localStorage.product) {
     localStorage.setItem('product', JSON.stringify([]));
   }
@@ -83,6 +88,7 @@ const App = () => {
         <LoadingContext.Provider value={loadingValue}>
         <BreadcrumbContext.Provider value={breadcrumbValue}>
         <MobileViewContext.Provider value={viewValue}>
+        <BackendRouteContext.Provider value={routeValue}>
         <CartProvider>
         <Header />
           {routes}
@@ -93,6 +99,7 @@ const App = () => {
         {/* </Routes> */}
         <Footer />
         </CartProvider>
+        </BackendRouteContext.Provider>
         </MobileViewContext.Provider>
         </BreadcrumbContext.Provider>
         </LoadingContext.Provider>

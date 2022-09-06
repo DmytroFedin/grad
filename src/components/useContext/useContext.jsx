@@ -8,19 +8,24 @@ export const ProductsContext = createContext({
 export const  LoadingContext = createContext({
   loading: false,
   setBucket: () => {}
-})
+});
 
 export const  BreadcrumbContext = createContext({
   dynamicBreadcrumb: [],
   setDynamicBreadcrumb: () => {}
-})
+});
 
 export const  RangeInputContext = createContext({
   RangeInputPrice: [],
   setRangeInputPrice: () => {}
-})
+});
 
 export const  MobileViewContext = createContext({
   mobileView: {},
   setMobileView: () => {}
-})
+});
+
+export const  BackendRouteContext = createContext({
+  backendRoute: {},
+  setBackendRoute: () => {}
+});

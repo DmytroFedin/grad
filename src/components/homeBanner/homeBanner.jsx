@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Style from './homeBanner.module.scss'
 import { Navigation} from 'swiper';
 import Slide1 from '../../assets/images/banner.jpg'
@@ -12,9 +12,11 @@ import 'swiper/modules/navigation/navigation.scss'; // Navigation module
 import axios from 'axios';
 import ProductItem from '../ProductItem/ProductItem';
 import LinkCustom from '../../elements/link/link';
+import { BackendRouteContext } from '../useContext/useContext';
 
 
 const Banner = (props) => {
+  const { backendRoute } = useContext(BackendRouteContext);
   const [toggle, setToggle] = useState()
   
   useEffect(() => { 
@@ -23,7 +25,7 @@ const Banner = (props) => {
 
   const fetch = async (e) => {
   setToggle('promotion')
-  const response = await axios.get('/api/promotion')
+  const response = await axios.get(`${backendRoute}api/promotion`)
   const result = JSON.parse(response.request.response)
   setResult(result.data)
 }
@@ -31,14 +33,14 @@ const Banner = (props) => {
 
   const newest = async (e) => {
     setToggle('newest')
-    const response = await axios.get('/api/new')
+    const response = await axios.get(`${backendRoute}api/new`)
     const result = JSON.parse(response.request.response)
     setResult(result.data)
   }
 
   const favotite = async (e) => {
     setToggle('favorite')
-    const response = await axios.get('/api/favorites')
+    const response = await axios.get(`${backendRoute}api/favorites`)
     const result = JSON.parse(response.request.response)
     setResult(result.data)
   }
