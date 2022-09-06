@@ -35,7 +35,10 @@ const App = () => {
   const [backendRoute, setBackendRoute] = useState();
   const routeValue = useMemo(() => ({ backendRoute, setBackendRoute }), [backendRoute]);
 
-  setBackendRoute('https://grad-backend-server.herokuapp.com/')
+
+  useEffect(()=>{
+    setBackendRoute('https://grad-backend-server.herokuapp.com/')
+  },[])
   
   if (!localStorage.product) {
     localStorage.setItem('product', JSON.stringify([]));
