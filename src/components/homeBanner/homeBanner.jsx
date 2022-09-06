@@ -25,7 +25,7 @@ const Banner = (props) => {
 
   const fetch = async (e) => {
   setToggle('promotion')
-  const response = await axios.get(`${backendRoute}api/promotion`)
+  const response = await axios.get(`https://grad-backend-server.herokuapp.com/api/promotion`)
   const result = JSON.parse(response.request.response)
   setResult(result.data)
 }
