@@ -1,0 +1,13 @@
+.payment{
+  display: flex;
+  width: 255px;
+  height: 40px;
+  justify-content: space-between;
+}
+
+.paymentIcon{
+  width: 40px;
+  &:nth-child(3){
+    width: 20px;
+  }
+}

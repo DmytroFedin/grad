@@ -1,0 +1,156 @@
+@import '../../style/variables.scss';
+
+.container{
+  width: 350px;
+  height: 305px;
+  background: $c-white;
+  color: $c-black;
+  transition: $t-normal;
+  padding: 35px 50px;
+  border: 1px solid rgba(133, 143, 164, 0.2);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  
+  @media (max-width: $m-laptop) {
+    width: 470px;
+    height: 270px;
+    justify-content: center;
+  }
+
+  @media (max-width: $m-bigPhone) {
+    width: 300px;
+    height: 220px;
+    padding: 0;
+  }
+}
+
+.padding{
+  transition: $t-normal;
+  padding-top: 25px;
+  &:hover{
+    padding-top: 0;
+    >.container{
+      background: $c-light-red;
+      color: $c-white;
+      height: 330px;
+      padding: 35px 45px;
+
+      @media (max-width: $m-laptop) {
+        height: 270px;
+      } 
+
+      @media (max-width: $m-bigPhone) {
+        height: 240px;
+        padding: 0;
+      } 
+
+  
+      >.hand{
+        right: -1px;
+        top: 134px;
+        
+        @media (max-width: $m-laptop) {
+          top: 75px;
+        } 
+
+        @media (max-width: $m-bigPhone) {
+          top: 85px;
+        }
+      }
+  
+      >.wrapper{
+        align-items: flex-start;
+        text-align: start;
+        width: 170px;
+        svg{
+          fill: $c-white;
+        }
+
+        >.text{
+          width: 150px;
+
+          @media (max-width: $m-laptop) {
+            width: 200px;
+          }
+
+          @media (max-width: $m-bigPhone) {
+            width: 150px;
+          }
+        }
+
+        @media (max-width: $m-laptop) {
+          width: 260px;
+        } 
+      }
+    }
+  }  
+  @media (max-width: $m-laptop) {
+    padding: 0;
+  } 
+}
+
+.wrapper{
+  width: 255px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.img{
+  width: 60px;
+  height: 60px;
+  fill: $c-light-red;
+}
+
+.text{
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  @media (max-width: $m-bigPhone) {
+    margin-top: 15px;
+  } 
+}
+
+.btn{
+  margin-top: 20px;
+  display: flex;
+  gap: 5px;
+
+  @media (max-width: $m-bigPhone) {
+    margin-top: 10px;
+  }
+}
+
+.arrow{
+  width: 10px;
+  height: 10px;
+}
+
+.hand{
+  width: 135px;
+  height: 195px;
+  position: absolute;
+  right: -600%;
+  transition: $t-normal;
+
+  @media (max-width: $m-bigPhone) {
+    width: 100px;
+    height: 155px;
+  } 
+}
+
+.absolute{
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media (max-width: $m-tablet) {
+    flex-direction: column;
+  } 
+}

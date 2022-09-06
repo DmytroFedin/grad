@@ -1,0 +1,69 @@
+@import '../../style/variables.scss';
+
+.container {
+  margin: 205px auto 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media (max-width: $m-laptop) {
+    margin: 125px auto 0;
+  }
+}
+
+.banner {
+  display: flex;
+  justify-content: center;
+  height: 500px;
+  margin-top: 35px;
+
+  @media (max-width: $m-laptop) {
+    height: 320px;
+  }
+  }
+
+.promotion {
+  margin: 155px auto 0; 
+  width: 100%;
+  @media (max-width: $m-laptop) {
+    margin: 120px auto 0;
+  }
+}
+
+.showCase {
+  margin: 120px auto 0;
+
+  @media (max-width: $m-laptop) {
+    margin: 80px auto 0;
+  }
+}
+
+.infoBlock {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  transform-origin: top;
+  position: relative;
+  height: 330px;
+
+  @media (max-width: $m-laptop) {
+    height: 660px;
+  }
+
+  @media (max-width: $m-tablet) {
+    height: 1080px;
+  }
+
+  @media (max-width: $m-bigPhone) {
+    height: 900px;
+  }
+}
+
+.ideasBanner {
+  margin-top: 110px;
+}
+
+.brandsDisplay {
+  margin: 120px auto 0;
+}

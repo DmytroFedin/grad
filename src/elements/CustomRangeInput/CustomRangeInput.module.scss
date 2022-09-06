@@ -1,0 +1,129 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.slider {
+  position: relative;
+  width: 180px;
+  height: 3px;
+  overflow: hidden;
+  top: 25px;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.inputValues{
+  display: flex;
+  width: 100%;
+  gap: 5px;
+  height: 25px;
+}
+
+.header{
+  margin-bottom: 10px;
+}
+
+.hr{
+  width: 15px;
+  height: 1px;
+  border-top: 1px solid gray;
+  margin-top: 12px;
+}
+
+.sliderTrack,
+.sliderRange {
+  position: absolute;
+}
+
+.sliderTrack,
+.sliderRange {
+  border-radius: 3px;
+  height: 2px;
+}
+
+.sliderTrack {
+  background-color: gray;
+  width: 100%;
+  z-index: 1;
+}
+
+.sliderRange {
+  background-color: red;
+  z-index: 2;
+  max-width: 100%;
+}
+
+.submitBtn {
+  height: 25px;
+  width: 30px;
+}
+
+.sliderLeftValue,
+.sliderRightValue {
+  color: black;
+  font-size: 12px;
+  margin-bottom: 25px;
+  width: 55px;
+  height: 25px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  outline: none;
+  padding: 5px;
+}
+
+
+/* Removing the default appearance */
+.thumb,
+.thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.thumb {
+  pointer-events: none;
+  position: absolute;
+  height: 0px;
+  width: 180px;
+  outline: none;
+  top: 50px;
+}
+
+.thumbLeft {
+  z-index: 3;
+}
+
+.thumbRight {
+  z-index: 4;
+}
+
+/* For Chrome browsers */
+.thumb::-moz-range-thumb,
+.thumb::-webkit-slider-thumb {
+  background: white;
+  border: 2px solid red;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 14px;
+  width: 14px;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

@@ -1,0 +1,73 @@
+@import '../../../style/variables.scss';
+
+.container{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+  height: 445px;
+  border-bottom: 1px solid $c-light-gray;
+
+  @media (max-width: $m-laptop) {
+    height: 360px;
+  }
+
+  @media (max-width: $m-bigPhone) {
+    height: 580px;
+  }
+}
+
+.links{
+  width: 930px;
+  height: 340px;
+  display: flex;
+
+  @media (max-width: $m-laptop) {
+    height: 250px;
+  }
+
+  @media (max-width: $m-bigPhone) {
+    height: 520px;
+    flex-wrap: wrap;
+    row-gap: 30px;
+  }
+}
+
+.linksSection {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex-wrap: wrap;
+  flex-basis: 25%;
+
+  @media (max-width: $m-bigPhone) {
+    flex-basis: 45%;
+    align-items: center;
+  }
+}
+
+.title{
+  color: $c-white;
+  margin-left: 10px;
+
+  @media (max-width: $m-laptop) {
+    margin: 0;
+  }
+
+  @media (max-width: $m-bigPhone) {
+    width: 120px;
+  }
+}
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: $m-laptop) {
+    gap: 10px;
+  }
+
+  @media (max-width: $m-bigPhone) {
+    width: 120px;
+  }
+}

@@ -1,0 +1,13 @@
+.headerNav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1025px;
+  width: 100%;
+
+  &Column{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}

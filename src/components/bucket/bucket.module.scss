@@ -1,0 +1,26 @@
+@import '../../style/variables.scss';
+.count{
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: $c-light-red;
+  position: absolute;
+  top: 5px;
+  right: 2px;
+  text-align: center;
+}
+
+.container{
+  width: 40px;
+  height: 28px;
+  stroke: $c-light-gray;
+}
+
+.open{
+  position: absolute;
+  right: calc(50% - 110px);
+  top: 55px;
+  background: gray;
+  width: 220px;
+  padding: 10px;
+}

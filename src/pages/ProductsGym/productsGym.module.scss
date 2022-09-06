@@ -1,0 +1,68 @@
+@import '../../style/variables.scss';
+.catalogue{
+  max-width: 1410px;
+  margin: 70px auto 30px;
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+
+}
+
+.item{
+  min-width: 330px;
+  height: 520px;
+  background-color: white;
+  color: #1A1A25;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.itemWider{
+  min-width: 450px;
+}
+
+.image{
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(0deg, #E8E9ED, #E8E9ED)
+}
+
+.list{
+  height: 320px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  letter-spacing: 0em;
+  max-width: 275px;
+}
+
+.listWider{
+  max-width: 390px;
+}
+
+.listTitle{
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: 800;  
+}
+
+.listItem{
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.listItemFirst{
+  margin-top: 12px;  
+}
+
+.horizontalLine{
+  border: 1px solid #858FA433;
+  margin-top: 8px;
+  
+}

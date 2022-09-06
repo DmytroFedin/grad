@@ -1,0 +1,33 @@
+@import '../../style/variables.scss';
+
+.bucket{
+  height: 150px;
+  color: black;
+  display: flex;
+  gap: 10px;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.image{
+  width: 150px;
+  height: 150px;
+}
+
+.description{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.empty{
+  text-align: center;
+}
+
+.input{
+  width: 50px;
+}

@@ -1,0 +1,702 @@
+[
+  {
+    "path": "Gym-equipment",
+    "children": [
+      {
+        "path": "Cardio",
+        
+        "subId":1,
+        "breadcrumb": "Кардиотренажеры",
+        "link": "Gym-equipment/Cardio",
+        
+        "children": [
+          {
+            "path": "Thredmills",
+            "popular": true,
+            "subId":1.1,
+            "breadcrumb": "Беговые дорожки",
+            "link": "Gym-equipment/Cardio/Thredmills",
+            "brends": [
+              {
+                "name":"Bowflex",
+                "image":""
+              },
+              {
+                "name":"Eclipse",
+                "image":"https://ibb.co/Xpbpbpv"
+              },
+              {
+                "name":"Kernel",
+                "image":"https://ibb.co/hmn9mvP"
+              },
+              {
+                "name":"Meridien",
+                "image":"https://ibb.co/jMkXxdT"
+              },
+              {
+                "name":"Nautilus",
+                "image":"https://ibb.co/PzLZkV4"
+              },
+              {
+                "name":"Cardio Power",
+                "image":"https://ibb.co/VwXCDS4"
+              },
+              {
+                "name":"Cardio Power Pro",
+                "image":"https://ibb.co/Js1Ngxr"
+              },
+              {
+                "name":"Double Fish",
+                "image":"https://ibb.co/YcGDQhX"
+              }
+            ]
+          },
+          {
+            "path": "EllipticalTrainers",
+            "popular": true,
+            "subId":1.2,
+            "breadcrumb": "Эллиптические тренажеры",
+            "link": "Gym-equipment/Cardio/EllipticalTrainers",
+            "brends": [
+              {
+                "name":"Boxing bar",
+                "image":"https://ibb.co/9YxyGFT"
+              },
+              {
+                "name":"Eclipse",
+                "image":"https://ibb.co/Xpbpbpv"
+              },
+              {
+                "name":"Kernel",
+                "image":"https://ibb.co/hmn9mvP"
+              },
+              {
+                "name":"Meridien",
+                "image":"https://ibb.co/jMkXxdT"
+              },
+              {
+                "name":"Nautilus",
+                "image":"https://ibb.co/PzLZkV4"
+              },
+              {
+                "name":"Double Fish",
+                "image":"https://ibb.co/YcGDQhX"
+              }
+            ]
+          },
+          {
+            "path": "Exercycle",
+            
+            "subId":1.3,
+            "breadcrumb": "Велотренажеры",
+            "link": "Gym-equipment/Cardio/Exercycle"
+          },
+          {
+            "path": "Ladders&Steppers",
+            
+            "subId":1.4,
+            "breadcrumb": "Cтепперы",
+            "link": "Gym-equipment/Cardio/Ladders&Steppers"
+          },
+          {
+            "path": "RowingMachines",
+            
+            "subId":1.5,
+            "breadcrumb": "Гребные тренажеры",
+            "link": "Gym-equipment/Cardio/RowingMachines"
+          },
+          {
+            "path": "Cycling", 
+            
+            "subId":1.6,
+             "breadcrumb": "Сайклинг" ,
+            "link": "Gym-equipment/Cardio/Cycling"
+          },
+          {
+            "path": "SkiSimulator",
+            
+            "subId":1.7,
+            "breadcrumb": "Горнолыжные тренажеры",
+            "link": "Gym-equipment/Cardio/SkiSimulator"
+          }
+        ]
+      },
+      {
+        "path": "PowerTraining",
+        
+        "subId":2,
+        "breadcrumb": "Силовые тренажеры",
+        "link": "Gym-equipment/PowerTraining",
+        
+        "children": [
+          {
+            "path": "Multistation",
+            "popular":true,
+            "subId":2.1,
+            "breadcrumb": "Мультистанции",
+            "link": "Gym-equipment/PowerTraining/Multistation",
+            "brends": [
+              {
+                "name":"Boxing bar",
+                "image":"https://ibb.co/9YxyGFT"
+              },
+              {
+                "name":"Eclipse",
+                "image":"https://ibb.co/Xpbpbpv"
+              },
+              {
+                "name":"Kernel",
+                "image":"https://ibb.co/hmn9mvP"
+              },
+              {
+                "name":"Meridien",
+                "image":"https://ibb.co/jMkXxdT"
+              },
+              {
+                "name":"Nautilus",
+                "image":"https://ibb.co/PzLZkV4"
+              },
+              {
+                "name":"Original",
+                "image":"https://ibb.co/CBzSChJ"
+              },
+              {
+                "name":"Octane",
+                "image":"https://ibb.co/P5VcXwx"
+              },
+              {
+                "name":"Double Fish",
+                "image":"https://ibb.co/YcGDQhX"
+              }
+            ]
+          },
+          {
+            "path": "FramesAndComplexes",
+            
+            "subId":2.2,
+            "breadcrumb": "Рамы и комплексы",
+            "link": "Gym-equipment/PowerTraining/FramesAndComplexes"
+          },
+          {
+            "path": "Benches",
+            
+            "subId":2.3,
+            "breadcrumb": "Скамьи",
+            "link": "Gym-equipment/PowerTraining/Benches"
+          }
+        ]
+      },
+      {
+        "path": "FunctionalTraining",
+        
+        "subId":3,
+        "breadcrumb": "Функциональный тренинг",
+        "link": "Gym-equipment/FunctionalTraining",
+        
+        "children": [
+          {
+            "path": "ComplexesForFunctionalTraining",
+            
+            "subId":3.1,
+            "breadcrumb": "Комплексы для ФТ",
+            "link": "Gym-equipment/FunctionalTraining/ComplexesForFunctionalTraining"
+          },
+          {
+            "path": "SkiSimulators",
+            
+            "subId":3.2,
+            "breadcrumb": "Горнолыжные тренажеры",
+            "link": "Gym-equipment/FunctionalTraining/SkiSimulators"
+          },
+          {
+            "path": "Slide&FIT",
+            
+            "subId":3.3,
+            "breadcrumb": "Slide&FIT",
+            "link": "Gym-equipment/FunctionalTraining/Slide&FIT"
+          }
+        ]
+      },
+      {
+        "path": "FreeWeights",
+        
+        "subId":4,
+        "breadcrumb": "Свободные веса",
+        "link": "Gym-equipment/FreeWeights",
+        
+        "children": [
+          {
+            "path": "Dumbbells&DumbbellRows",
+            
+            "subId":4.1,
+            "breadcrumb": "Гантели и гантельные ряды",
+            "link": "Gym-equipment/FreeWeights/Dumbbells&DumbbellRows"
+          },
+          {
+            "path": "KettleBall",
+            
+            "subId":4.2,
+            "breadcrumb": "Гири",
+            "link": "Gym-equipment/FreeWeights/KettleBall"
+          },
+          {
+            "path": "Disks&Necks",
+            
+            "subId":4.3,
+            "breadcrumb": "Диски и грифы",
+            "link": "Gym-equipment/FreeWeights/Disks&Necks"
+          },
+          {
+            "path": "Racks&Storage",
+            
+            "subId":4.4,
+            "breadcrumb": "Стойки и хранение",
+            "link": "Gym-equipment/FreeWeights/Racks&Storage"
+          }
+        ]
+      },
+      {
+        "path": "Aerobics",
+        
+        "subId":5,
+        "breadcrumb": "Аэробика",
+        "link": "Gym-equipment/Aerobics",
+        
+        "children": [
+          {
+            "path": "Aerobics",
+            "popular":true,
+            "subId":5.1,
+            "breadcrumb": "Аэробика",
+            "link": "Gym-equipment/Aerobics/Aerobics",
+            "brends": [
+              {
+                "name":"Octane",
+                "image":"https://ibb.co/P5VcXwx"
+              },
+              {
+                "name":"Eclipse",
+                "image":"https://ibb.co/Xpbpbpv"
+              },
+              {
+                "name":"Original",
+                "image":"https://ibb.co/P5VcXwx"
+              },
+              {
+                "name":"Meridien",
+                "image":"https://ibb.co/jMkXxdT"
+              },
+              {
+                "name":"Nautilus",
+                "image":"https://ibb.co/PzLZkV4"
+              },
+              {
+                "name":"Double Fish",
+                "image":"https://ibb.co/YcGDQhX"
+              }
+            ]
+          },
+          {
+            "path": "GroupProgramms",
+            
+            "subId":5.2,
+            "breadcrumb": "Для групповых программ",
+            "link": "Gym-equipment/Aerobics/GroupProgramms"
+          },
+          {
+            "path": "PersonalTraining",
+            
+            "subId":5.3,
+            "breadcrumb": "Для персонального тренинга",
+            "link": "Gym-equipment/Aerobics/PersonalTraining"
+          }
+        ]
+      },
+      {
+        "path": "Welness",
+        
+        "subId":6,
+        "breadcrumb": "Wellness, СПА, массаж",
+        "link": "Gym-equipment/Welness",
+        
+        "children": [
+          {
+            "path": "ContactlessHotTubs",
+            
+            "subId":6.1,
+            "breadcrumb": "Бесконтактные гидромассажные ванны",
+            "link": "Gym-equipment/Welness/ContactlessHotTubs"
+          },
+          {
+            "path": "Solariums",
+            
+            "subId":6.2,
+            "breadcrumb": "Солярии",
+            "link": "Gym-equipment/Welness/Solariums"
+          },
+          {
+            "path": "MassageTables",
+            
+            "subId":6.3,
+            "breadcrumb": "Массажные столы",
+            "link": "Gym-equipment/Welness/MassageTables"
+          },
+          {
+            "path": "Massagers",
+            
+            "subId":6.4,
+            "breadcrumb": "Массажеры",
+            "link": "Gym-equipment/Welness/Massagers"
+          }
+        ]
+      },
+      {
+        "path": "Reabilitation",
+        
+        "subId":7,
+        "breadcrumb": "Реабилитация и спортивная медицина",
+        "link": "Gym-equipment/Reabilitation",
+        
+        "children": [
+          {
+            "path": "DiagnosticComplexes",
+            
+            "subId":7.1,
+            "breadcrumb": "Диагностические комплексы",
+            "link": "Gym-equipment/Reabilitation/DiagnosticComplexes"
+          },
+          {
+            "path": "RehabilitationSimulators",
+            
+            "subId":7.2,
+            "breadcrumb": "Реабилитационные тренажеры",
+            "link": "Gym-equipment/Reabilitation/RehabilitationSimulators"
+          },
+          {
+            "path": "FitnessTesting",
+            
+            "subId":7.3,
+            "breadcrumb": "Фитнес тестирование",
+            "link": "Gym-equipment/Reabilitation/FitnessTesting"
+          }
+        ]
+      },
+      {
+        "path": "Pool",
+        
+        "subId":8,
+        "breadcrumb": "Оборудование для бассейнов",
+        "link": "Gym-equipment/Pool",
+        "children": [
+          {
+            "path": "PoolTrainers",
+            
+            "subId":8.1,
+            "breadcrumb": "Тренажеры для бассейнов",
+            "link": "Gym-equipment/Pool/PoolTrainers"
+          }
+        ]
+      }
+    ],
+    "id":1,
+    "breadcrumb": "Для фитнес клубов"
+  },
+  {
+    "path": "Home-equipment",
+    
+    "id":2,
+    "breadcrumb": "Тренажеры для дома",
+    "children": [
+      {
+        "path": "Cardio",
+        
+        "subId":1,
+        "breadcrumb": "Кардиотренажеры",
+        "link": "Home-equipment/Cardio",
+        "children": [
+          {
+            "path": "Thredmills",
+            
+            "subId":1.1,
+            "breadcrumb": "Беговые дорожки",
+            "link": "Home-equipment/Cardio/Thredmills"
+          },
+          {
+            "path": "EllipticalTrainers",
+            
+            "subId":1.2,
+            "breadcrumb": "Эллиптические тренажеры",
+            "link": "Home-equipment/Cardio/EllipticalTrainers"
+          },
+          {
+            "path": "Exercycle",
+            
+            "subId":1.3,
+            "breadcrumb": "Велотренажеры",
+            "link": "Home-equipment/Cardio/Exercycle"
+          },
+          {
+            "path": "Ladders&Steppers",
+            
+            "subId":1.4,
+            "breadcrumb": "Cтепперы",
+            "link": "Home-equipment/Cardio/Ladders&Steppers"
+          },
+          {
+            "path": "RowingMachines",
+            
+            "subId":1.5,
+            "breadcrumb": "Гребные тренажеры",
+            "link": "Home-equipment/Cardio/RowingMachines"
+          },
+          { 
+            "path": "Cycling", 
+            
+            "subId":1.6,
+            "breadcrumb": "Сайклинг" ,
+            "link": "Home-equipment/Cardio/Cycling"
+          },
+          {
+            "path": "SkiSimulator",
+            
+            "subId":1.7,
+            "breadcrumb": "Горнолыжные тренажеры",
+            "link": "Home-equipment/Cardio/SkiSimulator"
+          }
+        ]
+      },
+      {
+        "path": "PowerTraining",
+        
+        "subId":2,
+        "breadcrumb": "Силовые тренажеры",
+        "link": "Home-equipment/PowerTraining",
+        
+        "children": [
+          {
+            "path": "Multistation",
+            
+            "subId":2.1,
+            "breadcrumb": "Мультистанции",
+            "link": "Home-equipment/PowerTraining/Multistation"
+          },
+          {
+            "path": "FramesAndComplexes",
+            
+            "subId":2.2,
+            "breadcrumb": "Рамы и комплексы",
+            "link": "Home-equipment/PowerTraining/FramesAndComplexes"
+          },
+          {
+            "path": "Benches",
+            
+            "subId":2.3,
+            "breadcrumb": "Скамьи",
+            "link": "Home-equipment/PowerTraining/Benches"
+          }
+        ]
+      },
+      {
+        "path": "Outdoor",
+        
+        "subId":3,
+        "breadcrumb": "Уличные виды спорта",
+        "link": "Home-equipment/Outdoor",
+        
+        "children": [
+          {
+            "path": "Trampolines",
+            
+            "subId":3.1,
+            "breadcrumb": "Батуты",
+            "link": "Home-equipment/Outdoor/Trampolines"
+          },
+          {
+            "path": "Basketball",
+            
+            "subId":3.2,
+            "breadcrumb": "Баскетбол",
+            "link": "Home-equipment/Outdoor/Basketball"
+          },
+          {
+            "path": "Football",
+            
+            "subId":3.3,
+            "breadcrumb": "Футбол",
+            "link": "Home-equipment/Outdoor/Football"
+          }
+        ]
+      },
+      {
+        "path": "FreeWeights",
+        
+        "subId":4,
+        "breadcrumb": "Свободные веса",
+        "link": "Home-equipment/FreeWeights",
+        
+        "children": [
+          {
+            "path": "Dumbbells&DumbbellRows",
+            
+            "subId":4.1,
+            "breadcrumb": "Гантели и гантельные ряды",
+            "link": "Home-equipment/FreeWeights/Dumbbells&DumbbellRows"
+          },
+          {
+            "path": "KettleBall",
+            
+            "subId":4.2,
+            "breadcrumb": "Гири",
+            "link": "Home-equipment/FreeWeights/KettleBall"
+          },
+          {
+            "path": "Disks&Necks",
+            
+            "subId":4.3,
+            "breadcrumb": "Диски и грифы",
+            "link": "Home-equipment/FreeWeights/Disks&Necks"
+          },
+          {
+            "path": "Racks&Storage",
+            
+            "subId":4.4,
+            "breadcrumb": "Стойки и хранение",
+            "link": "Home-equipment/FreeWeights/Racks&Storage"
+          }
+        ]
+      },
+      {
+        "path": "GameTables",
+        
+        "subId":5,
+        "breadcrumb": "Игровые столы",
+        "link": "Home-equipment/GameTables",
+        
+        "children": [
+          {
+            "path": "AirHockey",
+            
+            "subId":5.1,
+            "breadcrumb": "Аэрохоккей",
+            "link": "Home-equipment/GameTables/Аэрохоккей"
+          },
+          {
+            "path": "TableSoccer",
+            
+            "subId":5.2,
+            "breadcrumb": "Настольный футбол",
+            "link": "Home-equipment/GameTables/TableSoccer"
+          }
+
+        ]
+      },
+      {
+        "path": "Massage",
+        
+        "subId":6,
+        "breadcrumb": "Массажное оборудование",
+        "link": "Home-equipment/Massage",
+        
+        "children": [
+          {
+            "path": "ContactlessHotTubs",
+            
+            "subId":6.1,
+            "breadcrumb": "Бесконтактные гидромассажные ванны",
+            "link": "Home-equipment/Welness/ContactlessHotTubs"
+          },
+          {
+            "path": "Solariums",
+            
+            "subId":6.2,
+            "breadcrumb": "Массажные кресла",
+            "link": "Home-equipment/Welness/Solariums"
+          },
+          {
+            "path": "MassageTables",
+            
+            "subId":6.3,
+            "breadcrumb": "Массажные столы",
+            "link": "Home-equipment/Welness/MassageTables"
+          },
+          {
+            "path": "Massagers",
+            
+            "subId":6.4,
+            "breadcrumb": "Массажеры",
+            "link": "Home-equipment/Welness/Massagers"
+          }
+        ]
+      },
+      {
+        "path": "Fitness",
+        
+        "subId":7,
+        "breadcrumb": "Фитнес аксессуары",
+        "link": "Home-equipment/Fitness",
+        
+        "children": [
+          {
+            "path": "Thredmills",
+            
+            "subId":7.1,
+            "breadcrumb": "Беговые дорожки",
+            "link": "Home-equipment/Fitness/Thredmills"
+          },
+          {
+            "path": "EllipticalTrainers",
+            
+            "subId":7.2,
+            "breadcrumb": "Эллиптические тренажеры",
+            "link": "Home-equipment/Fitness/Thredmills"
+          },
+          {
+            "path": "Exercycle",
+            
+            "subId":7.3,
+            "breadcrumb": "Велотренажеры",
+            "link": "Home-equipment/Fitness/Thredmills"
+          },
+          {
+            "path": "Ladders&Steppers",
+            
+            "subId":7.4,
+            "breadcrumb": "Cтепперы",
+            "link": "Home-equipment/Fitness/Thredmills"
+          },
+          {
+            "path": "RowingMachines",
+            
+            "subId":7.5,
+            "breadcrumb": "Гребные тренажеры",
+            "link": "Home-equipment/Fitness/Thredmills"
+          }
+        ]
+      },
+      {
+        "path": "FunctionalTraining",
+        
+        "subId":8,
+        "breadcrumb": "Функциональный тренинг",
+        "link": "Home-equipment/FunctionalTraining",
+        
+        "children": [
+          {
+            "path": "Thredmills",
+            
+            "subId":8.1,
+            "breadcrumb": "Беговые дорожки",
+            "link": "Home-equipment/FunctionalTraining/Thredmills"
+          },
+          {
+            "path": "EllipticalTrainers",
+            
+            "subId":8.2,
+            "breadcrumb": "Эллиптические тренажеры",
+            "link": "Home-equipment/FunctionalTraining/Thredmills"
+          }
+        ]
+      }
+    ]
+  }
+]  

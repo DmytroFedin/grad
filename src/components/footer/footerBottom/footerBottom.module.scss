@@ -1,0 +1,60 @@
+
+@import '../../../style/variables.scss';
+
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+
+  @media (max-width: $m-bigPhone) {
+    margin-top: 30px;
+    gap: 30px;
+  }
+}
+
+.container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 10px;
+  margin-top: 60px;
+
+  @media (max-width: $m-laptop) {
+    max-width: 930px;;
+  }
+
+  @media (max-width: $m-bigPhone) {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+.logoContainer{
+  display: flex;
+  flex-direction: column;
+}
+
+.logo{
+  width: 280px;
+  height: 35px;
+}
+
+.dealerBtns{
+  width: 255px;
+}
+
+.buttons{
+  display: flex;
+}
+
+.contacts{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.rights{
+  margin-top: 15px;
+}

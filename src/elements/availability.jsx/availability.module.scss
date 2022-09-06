@@ -1,0 +1,27 @@
+@import '../../style/variables.scss';
+.item{
+  width:8px;
+  height: 8px;
+  margin-right: 1px;
+
+  &:first-child{
+    width: fit-content;
+    height: fit-content;
+    margin-right: 5px;
+  }
+  &:last-child{
+    margin-right: 0;
+  }
+}
+
+.green{
+  color: $c-green;
+}
+
+.red{
+  color: $c-light-red;
+}
+
+.orange{
+  color: $c-orange;
+}

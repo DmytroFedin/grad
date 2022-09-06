@@ -1,0 +1,22 @@
+.loginContainer{
+  max-width: 80px;
+  height: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:hover{
+    filter: brightness(1.2);
+  }
+
+  &MenuMode{
+    height: 40px;
+    max-width: 90px;
+  }
+}
+
+.icon{
+  height: 100%;
+}
+

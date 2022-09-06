@@ -1,0 +1,8 @@
+.buttons {
+  display: flex;
+
+  &Column{
+    flex-direction: column;
+    gap: 10px;
+  }
+}

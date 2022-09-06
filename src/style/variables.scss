@@ -1,0 +1,59 @@
+// Colors
+$c-light-pink: #f2505d;
+$c-light-red:  #F53B49;
+$c-shadowy: #222222;
+$c-red: #f20707;
+$c-white: #fff;
+$c-black: #000;
+$c-light-bllue: #298899;
+$c-blue: #4B7EE8;
+$c-gray: #858FA426;
+$c-green: green;
+$c-light-gray: #909CB5;
+$c-dark: #1A1A25;
+$c-background: #E5E5E5;;
+$c-orange: #F99808;
+$c-headerBttm: #2A2C38;
+
+
+// Fonts
+$f-roboto-reg: "roboto-regular";
+$f-inter-med: 'Inter-medium';
+$f-inter-reg: 'Inter-regular';
+$f-inter-bold: 'Inter-bold';
+$f-inter-black: 'Inter-black';
+$f-inter-extra-bold: 'Inter-extra-bold';
+
+
+// Font size
+$fs-small: 10;
+$fs-mid-small: 12;
+$fs-lowRes: 14;
+$fs-base: 16;
+$fs-sub: 18;
+$fs-btn: 20;
+$fs-1-5em: 24;
+$fs-soc-icon: 30;
+$fs-h2: 48;
+
+// Line height
+$lh-base: 1.3;
+$lh-big: 1.5;
+
+// Transition
+$t-normal: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+// Box Shadow
+$bs-container: 0px 4px 4px 0px rgba($c-shadowy, 0.4);
+$bs-button: 0px 5px 5px 0px rgba($c-shadowy, 0.1);
+
+//media
+$m-laptop: 1410px;
+$m-searchPage: 475px;
+$m-tablet: 980px;
+$m-bigPhone: 680px;
+$m-smallPhone: 400px;
+
+//Page paddings
+$p-normal: 0 20px;
+$p-small: 0 10px;

@@ -1,0 +1,32 @@
+@import '../style/variables.scss';
+
+.icon{
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.searchBox{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.searchResult {
+  position: absolute;
+  z-index: 99;
+  top: 30px;
+  border: aqua;
+  border: 1px solid blueviolet;
+  padding: 15px;
+  background-color: chartreuse;
+}
+
+.searchBar {
+  display: flex;
+}
+
+.verticalDivider {
+border-left: 1px solid gray;
+}
+

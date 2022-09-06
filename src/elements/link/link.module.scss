@@ -1,0 +1,131 @@
+@import '../../style/variables.scss';
+
+.linkActive{
+  color: white;
+  background: #384255;
+  border-radius: 10px;
+  padding: 10px;
+  text-decoration: none;
+}
+.link{
+  color:  #909CB5;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 10px;
+  width: fit-content;
+  transition: $t-normal;
+  &RedLink{
+    color: #F53B49;
+  }
+  &:hover{
+    color: white;
+    background: #384255;
+    border-radius: 10px;
+    text-decoration: none;
+  }
+  @media (max-width: $m-laptop) {
+    padding: 0;
+    &:hover {
+      background: none;
+      border-radius: 0;
+    }
+  }
+}
+
+.basicHover{
+  background: #AF4642;
+}
+
+.Btn{
+  width: 150px;
+  height: 40px;
+  color: $c-light-red;
+  border: 1px solid $c-light-red;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  background: transparent;
+  transition: $t-normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: $f-inter-reg;
+  &:hover{
+    background: $c-light-red;
+    color: $c-white;
+  }
+}
+.grayBtn{
+  max-width: 255px;
+  transition: $t-normal;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(133, 143, 164, 0.15);
+  border: none;
+  outline: none;
+  color: $c-light-gray;
+  padding: 5px;
+  cursor: pointer;
+  &:hover{
+    filter: brightness(1.2);
+  }
+}
+
+.icon{
+  width: 20px;
+  height: 20px;
+}
+
+.catalogue{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.catalogueBtn{
+  width: 125px;
+  height: 50px;
+  background: $c-light-red;
+  color: $c-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:disabled{
+    background: $c-light-gray;
+    pointer-events: none;
+  }
+
+  &:hover{
+    background: darkcyan;
+  }
+
+  &smaller{
+    width: 115px;
+  }
+
+  &MarginTop{
+    margin-top: 40px;
+  }
+}
+.iconWrapper{
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+  &Smaller{
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.textBold{
+  font-family: $f-inter-bold;
+}

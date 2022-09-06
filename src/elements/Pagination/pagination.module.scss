@@ -1,0 +1,40 @@
+
+.paginationWrapper {
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.pageLink{
+  transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+a.pageLink {
+  padding: 0.75rem 1rem;
+  max-width: 3.5rem;
+  text-align: center;
+  box-shadow: none !important;
+  border-color: #ced4da !important;
+  color: #6b88a4;
+  width: 100%;
+  font-weight: 900;
+  font-size: 1rem;
+}
+
+.pageLink:hover {
+  background-color: #f4f4f4;
+}
+
+.pageItemActive > .pageLink{
+  color: #445565 !important;
+  background-color: #e3e7eb !important;
+  border-color: #ced4da !important;
+}
+
+.pageLink {
+  position: relative;
+  display: block;
+  margin-left: 0;
+  line-height: 1.25;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+}

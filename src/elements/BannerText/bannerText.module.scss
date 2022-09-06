@@ -1,0 +1,66 @@
+@import '../../style/variables.scss';
+
+.bannerText{
+  font-family: "Inter-black",sans-serif;
+  color: $c-black;
+  position: absolute;
+  top: 15%;
+  right: 50%;
+  display: flex;
+  flex-direction: column;
+  width: 540px;
+  height: 310px;
+}
+
+.bannerTextWithLogo{
+  top:10%;
+  left: 5%;
+}
+
+.bannerTitle{
+  font-size: 24px;
+  color: $c-light-red;
+}
+
+.bannerBody{
+  font-size: 50px;
+}
+
+.bannerSub{
+  font-family: $f-inter-reg;
+  font-size: 50px;
+}
+
+.bannerBtn{
+  margin-top: 25px;
+  width: 150px;
+  height: 40px;
+  color: $c-light-red;
+  border: 1px solid $c-light-red;
+  border-radius: 5px;
+}
+
+.bannerLogo{
+  width: 150px;
+}
+
+.bannerBodyLogoMode{
+  margin-top: 10px;
+  font-size: 32px;
+  color: $c-light-red;
+}
+
+.bannerSubLogoMode{
+  font-family: $f-inter-reg;
+  font-size: 32px;
+  color: $c-white;
+}
+
+.bannerBtnLogoMode{
+  margin-top: 50px;
+  width: 150px;
+  height: 40px;
+  color: $c-light-red;
+  border: 1px solid $c-light-red;
+  border-radius: 5px;
+}

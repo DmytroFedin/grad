@@ -1,0 +1,22 @@
+@import '../../style/variables.scss';
+
+.headerBottom{
+  height: 45px;
+  width: 100vw;
+  background: $c-headerBttm;
+}
+
+.wrapper{
+  max-width: 1410px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: $p-normal;
+}
+
+.search{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}

@@ -1,0 +1,63 @@
+@import '../../../../style/variables.scss';
+
+.info{
+  display: flex;
+  flex-direction: column;
+  width: 255px;
+
+  @media (max-width: $m-bigPhone) {
+    gap: 30px;
+  }
+
+  &Row{
+    padding: $p-normal;
+    flex-direction: row;
+    width: 930px;
+  }
+}
+
+.item{
+  display: flex;
+  flex-basis: 25%;
+  flex-direction: column;
+  gap: 10px;
+  
+  @media (max-width: $m-bigPhone) {
+    gap: 30px;
+  }
+}
+
+.itemWrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  
+  &:nth-child(2){
+    margin-top: 50px;
+  }
+  &:nth-child(3){
+    margin-top: 25px;
+  }
+  &:last-child{
+    margin-top: 40px;
+  }
+  
+  @media (max-width: $m-laptop) {
+  max-width: 150px;
+
+  &:nth-child(2){
+    margin-top: 0;
+  }
+  &:nth-child(3){
+    margin-top: 0;
+  }
+  &:last-child{
+    margin-top: 0;
+}
+}
+}
+
+.BlueLink{
+  color: $c-blue
+}
