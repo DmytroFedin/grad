@@ -74,7 +74,7 @@ const Search = () => {
   return(
     <div className={Style.searchBox}>
     <div className={Style.searchBar}>
-    <input name='search' onChange={(event) => {handleOnChange(event)}}></input>
+    <input className={Style.searchInput} name='search' onChange={(event) => {handleOnChange(event)}}></input>
     <Link to={'/search'} onClick={FetchSearch} className={Style.icon}>
           <Icon link={'#icon-search'}/>
     </Link>

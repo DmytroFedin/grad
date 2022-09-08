@@ -12,6 +12,14 @@
   position: relative;
 }
 
+.searchInput {
+  width: 145px;
+
+  @media (max-width: $m-smallPhone) {
+    width: 80px;
+  } 
+}
+
 .searchResult {
   position: absolute;
   z-index: 99;

@@ -1,20 +1,30 @@
 @import '../../style/variables.scss';
 
-.headerBottom{
+.headerBottom {
   height: 45px;
   width: 100vw;
   background: $c-headerBttm;
 }
 
-.wrapper{
+.dropdown {
+  display: flex;
+}
+
+.wrapper {
   max-width: 1410px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   height: 100%;
   padding: $p-normal;
+  gap: 30px;
+  
+  @media (max-width: $m-tablet) {
+    justify-content: space-between;
+    gap: 0;
+  } 
 }
-
+ 
 .search{
   display: flex;
   gap: 5px;

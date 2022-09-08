@@ -2,6 +2,8 @@
   "name": "routing",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:5000",
+  "homepage": ".",
   "dependencies": {
     "@react-rxjs/core": "^0.9.4",
     "@react-rxjs/utils": "^0.9.5",

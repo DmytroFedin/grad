@@ -37,6 +37,10 @@
   @media (max-width: $m-laptop) {
     margin: 80px auto 0;
   }
+
+  @media (max-width: $m-bigPhone) {
+    max-width: 445px;
+  }
 }
 
 .infoBlock {

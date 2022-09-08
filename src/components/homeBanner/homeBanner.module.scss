@@ -25,18 +25,17 @@
 .slide{
   height: 500px;
   border-radius: 15px;
-  overflow: hidden;
   
   @media (max-width: $m-laptop) {
     height: 320px;
   }
   @media (max-width: $m-bigPhone) {
+    position: absolute;
     right: -30%;
   }
 
   @media (max-width: $m-smallPhone) {
     width: 600px;
-    position: absolute;
     right: -40%;
   }
 }
@@ -109,9 +108,11 @@
   top: 85% !important;
   left: auto !important;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
   &::after {
     content: none !important;
   }
+
   &Next {
     background: url('../../assets/icons/arrow-right.svg');
     background-size: cover;
@@ -146,13 +147,13 @@
     @media (max-width: $m-smallPhone) {
       right: 80px !important;
     }
+
     &Promotion {
       top: 25% !important;
       left: 5px !important;
       right: auto !important;
     }
   }
-  
 }
 
 .tabs{
