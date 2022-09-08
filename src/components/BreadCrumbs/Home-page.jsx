@@ -37,7 +37,7 @@ const HomePage = (props) => {
     setTotalPages(totalPages);
   };
   const totalProducts = products.length;
-console.log(breadcrumbs.at(-1).breadcrumb);
+
   
   return (
     <>
