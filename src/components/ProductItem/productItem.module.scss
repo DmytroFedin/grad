@@ -43,6 +43,10 @@
     flex-basis: 30%;
   }
 
+  @media (max-width: $m-bigPhone) {
+    margin: 0 auto;
+  }
+
   @media (max-width: $m-searchPage) {
     flex-basis: 48%;
   }

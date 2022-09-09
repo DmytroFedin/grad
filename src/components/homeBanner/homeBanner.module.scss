@@ -4,6 +4,9 @@
   max-width: 1625px;
   width: 100%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .slider{
@@ -11,8 +14,9 @@
   width: 100%;
   max-width: 1800px;
   height: 100%;
+  border-radius: 15px;
+
   &Smaller{
-    margin-top: 20px;
     max-width: 1625px;
     margin-left: 0 !important;
   }
@@ -169,6 +173,7 @@
     height: 95px;
     display: flex;
     flex-wrap: wrap;
+    text-align: center;
   }
 
 }
@@ -179,6 +184,7 @@
 
   @media (max-width: $m-bigPhone) {
     flex-basis: 100%;
+    margin: 0;
   }
 }
 
@@ -190,4 +196,10 @@
 
 .btn{
   width: 100%;
+
+  @media (max-width: $m-bigPhone) {
+    display: flex;
+    justify-content: center;
+  }
+
 }
