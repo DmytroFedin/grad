@@ -26,9 +26,6 @@ const ProductItem = (props) => {
   };
 
   const removeGuarantee = (item, index) => {
-    // item.quantity -= item.yearsGuarantee[index]
-    // item.yearsGuarantee[index] = 0;
-    // console.log(item.additionalGuarantee);
     addToCart(item, true, true, index)
   }
 
@@ -199,7 +196,7 @@ const ProductItem = (props) => {
                 </div>
               </div>
             }
-            <div className={Style.guaranteeContainer}>
+            {/* <div className={Style.guaranteeContainer}>
                 {props.yearsGuarantee.map((item, index) => {
                   if (item > 0 ) {
                    return <div key={index} className={Style.guaranteeDisplay}>
@@ -212,7 +209,7 @@ const ProductItem = (props) => {
                   }
                 })
                   }
-              </div>
+              </div> */}
             </div>
             <div className={Style.btnSection}>
               <div className={Style.likedBtn}>
