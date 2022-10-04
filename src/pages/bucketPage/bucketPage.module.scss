@@ -1,0 +1,246 @@
+@import '../../style/variables.scss';
+
+.content{
+  margin: 250px auto 0;
+  color: $c-black;
+  font-family: $f-inter-bold;
+  
+  @media (max-width: 1600px) {
+    padding: $p-normal;
+  }
+
+  @media (max-width: $m-laptop) {
+    margin: 150px auto 0;
+  }
+
+  @media (max-width: $m-bigPhone) {
+    padding: $p-small;
+  }
+}
+
+.mainHeading {
+  font-family: $f-inter-extra-bold;
+  font-size: $fs-h2-smaller + px;
+}
+
+.hr {
+  margin: 25px 0 10px;
+}
+
+.productAndTotal {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+
+  @media (max-width: $m-laptop) {
+    align-items: center;
+  }
+}
+
+.bucketSelectionBtn {
+  display: flex;
+  gap: 15px;
+  width: 255px;
+  height: 35px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tab {
+  cursor: pointer;
+  flex-basis: 50%;
+  text-align: center;
+}
+
+.stageBtn {
+  display: flex;
+  gap: 30px;
+}
+
+.verticalLine {
+  border-left: 1px solid $c-headerBttm;
+}
+
+.step {
+  cursor: pointer;
+}
+
+.notActiveStep {
+  color: $c-light-gray;
+}
+
+.totals {
+  position: absolute;
+  right: 0;
+  top: 55px;
+  max-width: 450px;
+  max-height: 430px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background-color: $c-white;
+  border-radius: 15px;
+  color: $c-black;
+  font-family: $f-inter-reg;
+
+  @media (max-width: 1600px) {
+    max-width: 400px;
+  }
+
+  @media (max-width: $m-laptop) {
+    position: unset;
+    padding: 20px;
+    font-size: 12px;
+  }
+}
+
+.guaranteeItem {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  &Wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+
+    @media (max-width: $m-bigPhone) {
+      font-size: $fs-mid-small + px;
+      justify-content: space-between;
+      gap: 10px;
+    }
+  }
+}
+
+.guaranteeHeading {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.guaranteeBlock {
+  display: flex;
+  flex-direction: column;
+  background-color: $c-dark-blue;
+  border-radius: 10px;
+  padding: 40px;
+  gap: 30px;
+  width: 100%;
+  font-family: $f-inter-bold;
+  color: $c-white;
+
+  @media (max-width: $m-bigPhone) {
+    padding: 20px;
+  }
+
+  @media (max-width: $m-smallPhone) {
+    padding: 15px;
+  }
+}
+
+.productService {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  max-width: 940px;
+  width: 100%;
+}
+
+.counter {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.heading {
+  font-size: $fs-soc-icon + px;
+}
+
+.grayText {
+  color: rgba(247, 247, 247, 0.5);
+
+  &Article {
+    font-family: $f-inter-reg;
+    display: inline;
+  }
+}
+
+.productName {
+  max-width: 450px;
+  width: 100%;
+
+  @media (max-width: $m-bigPhone) {
+    max-width: 230px;
+  }
+}
+
+.totalsHeading {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &Hr {
+    margin-top: 10px;
+  }
+}
+
+.totalSum {
+  display: flex;
+  color: $c-light-red;
+  font-family: $f-inter-extra-bold;
+  font-size: $fs-btn + px;
+}
+
+.sumItem,
+.quantityItem {
+  &:first-child {
+    flex-basis: 40%;
+  }
+}
+
+.totalQuantity {
+  display: flex;
+  flex-direction: column;
+  font-size: $fs-base + px;
+}
+
+.quantity {
+  display: flex;
+}
+
+.totalsBtns {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bonusBox {
+  margin-top: 20px;
+  display: flex;
+  gap: 20px;
+
+  >div >a {
+    color: $c-light-blue;
+  }
+}
+
+.addBtn {
+  outline: none;
+  border: 1px solid $c-white;
+  border-radius: 5px;
+  padding: 8px 12px;
+  color: $c-white;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $c-white;
+    color: $c-black;
+  }
+}
+

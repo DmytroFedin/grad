@@ -177,7 +177,6 @@
     top: 20px;
   }
 
-
   & :nth-child(1) {
     transform: translateY(7px) rotate(45deg);
   }
@@ -188,6 +187,24 @@
   
   & :nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
+  }
+}
+
+.resetBtn {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid $c-light-red;
+  border-radius: 15px;
+  background: $c-white;
+  font-family: $f-inter-bold;
+  transition: $t-normal;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $c-light-red;
+    color: $c-white;
   }
 }
 

@@ -19,6 +19,7 @@ import HomePage from './components/BreadCrumbs/Home-page';
 import ProductsGym from './pages/ProductsGym/productsGym';
 import CardioH from './pages/ProductsHome/Cardio/cardio';
 import  SearchPage from './pages/searchPage/searchPage';
+import BucketPage from './pages/bucketPage/bucketPage';
 
 const App = () => {
   // const [bucket$, addBucket$] = createSignal();
@@ -72,6 +73,11 @@ const App = () => {
     {
       path: "/search",
       element: <SearchPage />,
+    
+    },
+    {
+      path: "/cart",
+      element: <BucketPage />,
     
     },
     {

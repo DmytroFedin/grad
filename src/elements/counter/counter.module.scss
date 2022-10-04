@@ -1,0 +1,54 @@
+@import '../../style/variables.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.guaranteeChange {
+  width: 25px;
+  height: 25px;
+  border: 1px solid gray;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 1px 10px 4px;
+}
+
+.guaranteeCounter {
+  position: relative;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  color: rgba(247, 247, 247, 0.5);
+  height: fit-content;
+  user-select: none;
+}
+
+.black {
+  color: $c-black;
+}
+
+.count {
+  width: 50px;
+  text-align: center;
+  transition: $t-normal;
+
+  @media (max-width: $m-bigPhone) {
+    width: 40px;
+  }
+
+  &Small {
+    width: 25px;
+  }
+}
+
+.error {
+  transition: $t-normal;
+  position: absolute;
+  color: $c-light-red;
+  top: 40px;
+  width: 300px;
+}

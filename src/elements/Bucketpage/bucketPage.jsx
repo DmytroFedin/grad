@@ -2,17 +2,18 @@ import React, { useContext, useState } from "react";
 import Style from './bucketPage.module.scss'
 import { useCart, useDispatchCart } from "../../components/useContext/cartContext";
 import axios from "axios";
+import Rating from "../rating/rating";
+import Availabilty from "../availability.jsx/availability";
+import Icon from "../icon/icon";
+import ProductItem from "../../components/ProductItem/ProductItem";
 
-const BucketPage = (product) => {
+const BucketPage1 = (product) => {
   const dispatch = useDispatchCart();
   let localBucket = JSON.parse(localStorage.getItem('product'));
   const [cart, setCart] = useState()
+  const [itemQuantity, setitemQuantity] = useState()
   const item = useCart()
-  const removeFromCart = (index, quantity) => {
-    dispatch({ type: "REMOVE", index, quantity });
-  };
   const [value, setValue] = useState(1)
-  console.log(value);
 
   const FetchComments = async (e)=>{
     const cart = localBucket.map((item) => {return item.id})
@@ -31,31 +32,17 @@ const BucketPage = (product) => {
 
    })
 }
-  FetchComments()
+  // FetchComments()
   return (
     <>
       <div className={(localBucket && localBucket.length !==0)?Style.container:Style.empty}>
         {(localBucket && localBucket.length !==0)?localBucket.map((item, index) => (
-          <div key={index} className={Style.bucket}>
-          <div className={Style.image}>
-          <img src={item.img} alt=''></img>
-          </div>
-          <div className={Style.description}>
-          <span>{item.title}</span>
-          <span>{item.price}</span>
-          <span>{item.quantity}</span>
-          <span>{item.sum}</span>
-          <input type={'text'} className={Style.input} defaultValue={1} onChange={(target) => {
-            target.target.value = target.target.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')
-              setValue(target.target.value)
-            }}></input>
-          <button onClick={() =>removeFromCart(index, Math.abs(value))}>delete</button>
-          </div>
-          </div>
+          <ProductItem yearsGuarantee={item.yearsGuarantee} additionalGuarantee={item.additionalGuarantee} guaranteePrice={item.guaranteePrice} sum={item.sum} maxQuantity={item.maxQuantity} index={index} cart={true} product={item.product} shortening={true} view='full' category={item.category} subcategory={item.subcategory} key={index} productId={item._id} discountMode={false} title={item.title} rating={item.rating} poster={item.poster} availability={item.availability} price={item.price} quantity={item.quantity} type={item.type} runningBeltType={item.runningBeltType} runningBeltLength={item.runningBeltLength} manufacturer={item.manufacturer} engine={item.engine}/>
+           
         )):'Корзина пуста'}
       </div>
     </>
   )
 }
 
-export default BucketPage;
+export default BucketPage1;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {ReactComponent as Bag} from '../../assets/icons/bucket.svg';
-import BucketPage from "../../elements/Bucketpage/bucketPage";
+import BucketPage1 from "../../elements/Bucketpage/bucketPage";
 import Style from './bucket.module.scss';
 import { useCart } from "../../components/useContext/cartContext";
 
@@ -27,7 +27,7 @@ const Bucket = () => {
         <div className={Style.count}>{(localStorage.product.length !== 0)?itemValue(): '0'}</div>
       </div>
       {open && <div className={Style.open}>
-          <BucketPage/>
+          <BucketPage1/>
       </div>}
     </>
   )

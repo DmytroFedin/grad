@@ -69,7 +69,6 @@ const HomePage = (props) => {
         <div className={`padding ${Style.brandsDisplay}`}>
         <Brends/>
         </div>
-        <BurgerMenu />
         </div>
     </>
   )

@@ -60,8 +60,8 @@ const Banner = (props) => {
       resizeObserver={false}
       slidesPerView={(props.PromotionMode)?1:1}
       breakpoints={{
-                1540: { slidesPerView: props.PromotionMode?5:1},
-                1250: { slidesPerView: props.PromotionMode?4:1},
+                1595: { slidesPerView: props.PromotionMode?5:1},
+                1255: { slidesPerView: props.PromotionMode?4:1},
                 940: { slidesPerView: props.PromotionMode?3:1},
                 640: { slidesPerView: props.PromotionMode?2:1},
               }}

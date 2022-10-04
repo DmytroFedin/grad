@@ -10,7 +10,7 @@ const LinkCustom = (props) => {
       return (
         <Link
           to={props.to || "/"}
-          className={props.GrayStyle ? Style.grayBtn : Style.Btn}
+          className={props.GrayStyle ? Style.grayBtn : props.Bigger? `${Style.Btn} ${Style.BtnBigger}`: Style.Btn}
         >
           <span>{props.text}</span>
           {props.GrayStyle ? <Plane className={Style.icon} /> : ""}
@@ -21,8 +21,8 @@ const LinkCustom = (props) => {
         <div className={Style.catalogue}>
           {props.bannerMode ? (
             <Link
-              to={"/"}
-              className={`${Style.catalogueBtn} ${Style.catalogueBtnMarginTop}`}
+              to={props.to || "/"}
+              className={props.cartMode? `${Style.catalogueBtn} ${Style.catalogueBtnCartBtn}`:`${Style.catalogueBtn} ${Style.catalogueBtnTab}`}
             >
               <span className={Style.textBold}>{props.text}</span>
             </Link>

@@ -1,27 +1,53 @@
 @import '../../style/variables.scss';
-.item{
+
+.item {
   width:8px;
   height: 8px;
   margin-right: 1px;
 
-  &:first-child{
+  &:first-child {
     width: fit-content;
     height: fit-content;
     margin-right: 5px;
   }
-  &:last-child{
+  &:last-child {
     margin-right: 0;
   }
 }
 
-.green{
+.green {
   color: $c-green;
 }
 
-.red{
+.red {
   color: $c-light-red;
 }
 
-.orange{
+.orange {
   color: $c-orange;
+}
+
+.status {
+  color: #4B7EE8;
+}
+
+.availability,
+.quantity {
+  display: flex;
+  align-items: baseline;
+  font-size: $fs-mid-small + px;
+  font-family: $f-inter-med;
+}
+
+.availability {
+  gap: 10px;
+}
+
+.availabilityNormal {
+  gap: 10px;
+  
+  @media (max-width: $m-tablet) {
+    gap: 0;
+    flex-direction: column;
+  }
 }

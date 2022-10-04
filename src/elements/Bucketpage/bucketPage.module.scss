@@ -1,27 +1,65 @@
 @import '../../style/variables.scss';
 
-.bucket{
-  height: 150px;
-  color: black;
-  display: flex;
-  gap: 10px;
-}
-
 .container{
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
+.bucket{
+  height: 225px;
+  color: black;
+  display: flex;
+  gap: 10px;
+  background-color: $c-white;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.mainInfo {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+}
+
+.additionalInfo {
+  display: flex;
+  gap: 20px;
+
+  &Item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 80px;
+  }
+}
+
+.itemDescription {
+  padding: 5px;
+  border: 1px solid $c-gray;
+  display: block;
+  width: fit-content;
+  border-radius: 5px;
+}
+
 .image{
-  width: 150px;
-  height: 150px;
+  width: 160px;
+  height: 160px;
 }
 
 .description{
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
+  max-width: 770px;
+  padding: 20px;
+  font-family: $f-inter-reg;
+}
+
+.status{
+  width: 130px;
+  color: #4B7EE8;
 }
 
 .empty{
@@ -30,4 +68,83 @@
 
 .input{
   width: 50px;
+}
+
+.title {
+  max-width: 390px;
+  width: 100%;
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  font-size: $fs-sub + px;
+  font-family: $f-inter-reg;
+}
+
+.availability,
+.quantity,
+.rating {
+  display: flex;
+  align-items: baseline;
+}
+
+.rating{
+  font-size: $fs-mid-small + px;
+  font-family: $f-inter-med;
+}
+
+.availability {
+  gap: 10px;
+}
+
+.btnSection {
+  display: flex;
+  justify-content: end;
+  gap: 5px;
+  font-size: $fs-lowRes + px;
+}
+
+.deleteBtn {
+  display: flex;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.cross {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.crossRight,
+.crossLeft {
+  background-color: $c-black;
+  transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 20px;
+  margin: 5px auto;
+  display: block;
+  height: 2px;
+  width: 10px; 
+}
+
+.crossLeft {
+  transform: translateX(10px) rotate(45deg);
+}
+
+.crossRight {
+  transform: rotate(-45deg);
+}
+
+.likedBtn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.heart {
+  width: 16px;
+  height: 16px;
 }

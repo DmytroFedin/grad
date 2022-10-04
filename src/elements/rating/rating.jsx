@@ -70,12 +70,12 @@ const Rating = (props) => {
       return stars}
   }
   return (
-    <>
+    <div className={Style.ratingBox}>
     {ratingCheck().map((item, index) => (
       <span key={index} className={Style.rating}>{item}</span>
     ))
     }
-    </>
+    </div>
   )
 }
 

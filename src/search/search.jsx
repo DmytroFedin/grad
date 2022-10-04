@@ -25,7 +25,7 @@ const Search = () => {
       const result = JSON.parse(response.request.response)
       const data = [];
       result.data.map((item, index) => (
-        data.push(<ProductItem shortening={true} view='full' category={item.category} subcategory={item.subcategory} key={index} productId={item._id} discountMode={false} title={item.name} rating={item.rating} poster={item.image} availability={item.availability} price={item.price} quantity={item.quantity} type={item.type} runningBeltType={item.runningBeltType} runningBeltLength={item.runningBeltLength} manufacturer={item.manufacturer} engine={item.engine}/>)
+        data.push(<ProductItem yearsGuarantee={[0,0,0,0,0]} additionalGuarantee={0} guaranteePrice={0}  product={item.product} shortening={true} view='full' category={item.category} subcategory={item.subcategory} key={index} productId={item._id} discountMode={false} title={item.name} rating={item.rating} poster={item.image} availability={item.availability} price={item.price} quantity={item.quantity} type={item.type} runningBeltType={item.runningBeltType} runningBeltLength={item.runningBeltLength} manufacturer={item.manufacturer} engine={item.engine}/>)
         )) 
         setProducts(data);
       })   

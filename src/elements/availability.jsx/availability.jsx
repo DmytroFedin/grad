@@ -48,12 +48,17 @@ const Availabilty = (props) => {
     } 
   };
   return (
-    <>
-    {quantityCheck().map((item, index) => (
-      <div key={index} className={Style.item}>{item}</div>
-    ))
-    }
-    </>
+    <div className={props.normalMode?`${Style.availabilityNormal} ${Style.availability}`:Style.availability}>
+      <div className={Style.quantity}>
+        {quantityCheck().map((item, index) => (
+          <div key={index} className={Style.item}>{item}</div>
+        ))
+        }
+        </div>
+        <span className={Style.status}>
+          {props.availability ? "Есть в шоу-руме" : "Скоро ожидается"}
+        </span>
+    </div>
   )
 }
 

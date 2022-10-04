@@ -1,5 +1,13 @@
 @import '../../style/variables.scss';
-.rating{
+
+.ratingBox {
+  display: flex;
+align-items: baseline;
+font-size: $fs-mid-small + px;
+font-family: $f-inter-med;
+}
+
+.rating {
   width:10px;
   height: 10px;
   margin-right: 1px;

@@ -1,28 +1,31 @@
 @import '../../style/variables.scss';
 
-.linkActive{
+.linkActive {
   color: white;
   background: #384255;
   border-radius: 10px;
   padding: 10px;
   text-decoration: none;
 }
-.link{
+.link {
   color:  #909CB5;
   text-decoration: none;
   font-size: 14px;
   padding: 10px;
   width: fit-content;
   transition: $t-normal;
-  &RedLink{
+
+  &RedLink {
     color: #F53B49;
   }
-  &:hover{
+
+  &:hover {
     color: white;
     background: #384255;
     border-radius: 10px;
     text-decoration: none;
   }
+
   @media (max-width: $m-laptop) {
     padding: 0;
     &:hover {
@@ -32,11 +35,11 @@
   }
 }
 
-.basicHover{
+.basicHover {
   background: #AF4642;
 }
 
-.Btn{
+.Btn {
   width: 150px;
   height: 40px;
   color: $c-light-red;
@@ -50,12 +53,18 @@
   align-items: center;
   justify-content: center;
   font-family: $f-inter-reg;
-  &:hover{
+
+  &:hover {
     background: $c-light-red;
     color: $c-white;
   }
+
+  &Bigger {
+    max-width: 320px;
+    width: 100%;
+  }
 }
-.grayBtn{
+.grayBtn {
   max-width: 255px;
   transition: $t-normal;
   width: 100%;
@@ -69,24 +78,24 @@
   color: $c-light-gray;
   padding: 5px;
   cursor: pointer;
-  &:hover{
+
+  &:hover {
     filter: brightness(1.2);
   }
 }
 
-.icon{
+.icon {
   width: 20px;
   height: 20px;
 }
 
-.catalogue{
+.catalogue {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
 }
 
-.catalogueBtn{
+.catalogueBtn {
   width: 125px;
   height: 50px;
   background: $c-light-red;
@@ -99,24 +108,34 @@
   border-radius: 5px;
   cursor: pointer;
 
-  &:disabled{
+  &:disabled {
     background: $c-light-gray;
     pointer-events: none;
   }
 
-  &:hover{
+  &:hover {
     background: darkcyan;
   }
 
-  &smaller{
+  &smaller {
     width: 115px;
   }
 
-  &MarginTop{
+  &Tab {
+    height: 35px;
+  }
+
+  &MarginTop {
     margin-top: 40px;
   }
+
+  &CartBtn {
+    width: 390px;
+    height: 60px;
+  }
 }
-.iconWrapper{
+
+.iconWrapper {
   width: 25px;
   height: 25px;
   margin-right: 10px;
@@ -126,6 +145,20 @@
   }
 }
 
-.textBold{
+.textBold {
   font-family: $f-inter-bold;
+}
+
+.cartBtn {
+  width: 390px;
+  height: 60px;
+  background: $c-light-red;
+  color: $c-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
