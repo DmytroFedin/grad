@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import {ReactComponent as Bag} from '../../assets/icons/bucket.svg';
-import BucketPage1 from "../../elements/Bucketpage/bucketPage";
 import Style from './bucket.module.scss';
 import { useCart } from "../../components/useContext/cartContext";
+import { Link } from "react-router-dom";
 
 const Bucket = () => {
   useCart()
@@ -23,13 +23,13 @@ const Bucket = () => {
 
   return (
     <>
-      <div className={Style.container} onClick={() => setOpen(!open)}>
+      <Link to={'/cart'} className={Style.container} onClick={() => setOpen(!open)}>
         <Bag/>
         <div className={Style.count}>{(localStorage.product.length !== 0)?itemValue(): '0'}</div>
-      </div>
-      {open && <div className={Style.open}>
+      </Link>
+      {/* {open && <div className={Style.open}>
           <BucketPage1/>
-      </div>}
+      </div>} */}
     </>
   )
 }
