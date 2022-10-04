@@ -6,10 +6,11 @@ const CartDispatchContext = createContext();
 const check = (arr, action, obj) => {
   if (obj === true) {
     let sum = 0
-    arr.yearsGuarantee.map((item, index)=> {
+    arr.yearsGuarantee.map((item, index) => {
       if (item > 0) {
-         sum += item * (index + 1);
+        return sum += item * (index + 1);
         }
+        return 0
       })
       return sum
   }
@@ -17,8 +18,9 @@ const check = (arr, action, obj) => {
     let sum = 0
     arr[action].yearsGuarantee.map((item, index)=> {
       if (item > 0) {
-         sum += item * (index + 1);
+        return sum += item * (index + 1);
         }
+        return 0
       })
       return sum
   }

@@ -281,7 +281,7 @@
 
 .btnSection {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   gap: 5px;
   font-size: $fs-lowRes + px;
   margin-top: auto;

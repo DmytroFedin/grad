@@ -8,7 +8,7 @@ import BurgerMenu from "../../elements/burger-menu/burgerMenu";
 import HeaderProduct from "../header-middle/header-product-action/header-product-action";
 
 const HeaderTop = () => {
-  const  {mobileView, setMobileView } = useContext(MobileViewContext);
+  const  { mobileView } = useContext(MobileViewContext);
   return (
     <>
       <div className={Style.headerTop}>

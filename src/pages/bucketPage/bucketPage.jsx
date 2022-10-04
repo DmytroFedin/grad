@@ -8,7 +8,6 @@ import Style from "./bucketPage.module.scss"
 
 
 const BucketPage = () => {
-  const cart = useCart()
   const [ year, setYear ] = useState([{0:1},{0:1}]);
   const [ guaranteeQuantity, setguaranteeQuantity] = useState([{0:1},{0:1}]);
   const [ guaranteePrice, setGuaranteePrice] = useState(1000);
@@ -20,6 +19,7 @@ const BucketPage = () => {
   const dispatch = useDispatchCart();
   let total = 0;
   let quantity = 0;
+  useCart()
 
   const gatherYears = (e, index) => {
     let updatedList = [...year];

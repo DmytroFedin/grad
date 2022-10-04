@@ -1,4 +1,4 @@
-import React, { useCallback, useContext, useEffect, useMemo, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import HeaderBottom from "../header-bottom/header-bottom";
 import HeaderMiddle from "../header-middle/header-middle";
 import HeaderTop from "../header-top/header-top";
@@ -29,8 +29,8 @@ export function useWindowDimensions() {
 }
 
 const Header = () => {
-  const { mobileView, setMobileView } = useContext(MobileViewContext);
-  const { height, width } = useWindowDimensions();
+  const { setMobileView } = useContext(MobileViewContext);
+  const { width } = useWindowDimensions();
   const laptop = 1410;
   const tablet = 980;
   const mobile = 680;

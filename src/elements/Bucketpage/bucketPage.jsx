@@ -1,37 +1,30 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import Style from './bucketPage.module.scss'
-import { useCart, useDispatchCart } from "../../components/useContext/cartContext";
-import axios from "axios";
-import Rating from "../rating/rating";
-import Availabilty from "../availability.jsx/availability";
-import Icon from "../icon/icon";
+import { useCart } from "../../components/useContext/cartContext";
 import ProductItem from "../../components/ProductItem/ProductItem";
 
 const BucketPage1 = (product) => {
-  const dispatch = useDispatchCart();
   let localBucket = JSON.parse(localStorage.getItem('product'));
-  const [cart, setCart] = useState()
-  const [itemQuantity, setitemQuantity] = useState()
-  const item = useCart()
-  const [value, setValue] = useState(1)
+  // const [cart, setCart] = useState()
+  useCart()
 
-  const FetchComments = async (e)=>{
-    const cart = localBucket.map((item) => {return item.id})
-    console.log(cart);
-    await axios.get('/api/cart/' + cart).then((response) => {
-     // setProducts(response.request.response)
-     // parentCallback(response.request.response);
-     console.log(response.request.response);
-    //  const result = JSON.parse(response.request.response)
-    //  const data = [];
-    //  result.data.map((item, index) => (
-    //    data.push(<ProductItem key={index} productId={item._id} discountMode={false} title={item.name} rating={item.rating} poster={item.image} availability={item.availability} price={item.price} quantity={item.quantity} type={item.type} runningBeltType={item.runningBeltType} runningBeltLength={item.runningBeltLength} manufacturer={item.manufacturer} engine={item.engine}/>)
-    //    )) 
+//   const FetchComments = async (e)=>{
+//     const cart = localBucket.map((item) => {return item.id})
+//     console.log(cart);
+//     await axios.get('/api/cart/' + cart).then((response) => {
+//      // setProducts(response.request.response)
+//      // parentCallback(response.request.response);
+//      console.log(response.request.response);
+//     //  const result = JSON.parse(response.request.response)
+//     //  const data = [];
+//     //  result.data.map((item, index) => (
+//     //    data.push(<ProductItem key={index} productId={item._id} discountMode={false} title={item.name} rating={item.rating} poster={item.image} availability={item.availability} price={item.price} quantity={item.quantity} type={item.type} runningBeltType={item.runningBeltType} runningBeltLength={item.runningBeltLength} manufacturer={item.manufacturer} engine={item.engine}/>)
+//     //    )) 
       
-    //  setProducts(data);
+//     //  setProducts(data);
 
-   })
-}
+//    })
+// }
   // FetchComments()
   return (
     <>

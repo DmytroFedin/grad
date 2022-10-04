@@ -1,14 +1,13 @@
 import { useContext } from "react";
 import LinkCustom from "../../../elements/link/link";
 import Logo from "../../../elements/logo/logo";
-import Search from "../../../search/search";
 import Select from "../../CustomSelect/select";
 import { MobileViewContext } from "../../useContext/useContext";
 import Style from './header-info.module.scss';
 
 
 const HeaderInfo = () => {
-  const  {mobileView, setMobileView } = useContext(MobileViewContext);
+  const  { mobileView } = useContext(MobileViewContext);
   return (
     <>
         <div className={Style.headerInfo}>

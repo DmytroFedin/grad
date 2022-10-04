@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Icon from "../../../elements/icon/icon";
-import LinkCustom from "../../../elements/link/link";
 import Style from './header-login.module.scss'
 
 

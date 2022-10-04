@@ -1,13 +1,6 @@
 import React, { useContext } from "react";
 import Logo from "../../../elements/logo/logo";
 import Style from './footerBottom.module.scss';
-import {ReactComponent as Facebook} from '../../../assets/icons/facebook.svg';
-import {ReactComponent as Instagram} from '../../../assets/icons/instagram.svg';
-import {ReactComponent as Youtube} from '../../../assets/icons/youtube.svg';
-import {ReactComponent as Paypal} from '../../../assets/icons/paypal.svg';
-import {ReactComponent as Visa} from '../../../assets/icons/visa.svg';
-import {ReactComponent as Mastercard} from '../../../assets/icons/mastercard.svg';
-import {ReactComponent as Payment} from '../../../assets/icons/payment.svg';
 import { MobileViewContext } from "../../useContext/useContext";
 import FooterContacts from "../footerTop/footerContacts/footerContacts";
 import DealerBtns from "../../../elements/dealerBtns/dealerBtns";
@@ -17,7 +10,7 @@ import PaymentIcons from "../../../elements/paymentIcons/paymentIcons";
 
 
 const FooterBottom = () => {
-const  {mobileView, setMobileView } = useContext(MobileViewContext);
+const  { mobileView } = useContext(MobileViewContext);
   return (
     <div className={Style.wrapper}>
     {

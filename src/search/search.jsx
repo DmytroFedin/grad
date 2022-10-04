@@ -1,16 +1,17 @@
 import axios from 'axios';
-import React, {useContext, useEffect, useReducer, useRef, useState} from 'react';
+import React, {useContext, useEffect, useRef, useState} from 'react';
 import { Link } from 'react-router-dom';
 import ProductItem from '../components/ProductItem/ProductItem';
-import {LoadingContext, ProductsContext} from '../components/useContext/useContext';
+import {BackendRouteContext, LoadingContext, ProductsContext} from '../components/useContext/useContext';
 import Icon from '../elements/icon/icon';
 import Style from './search.module.scss';
 
 const Search = () => {
-  const { loading, setLoading } = useContext(LoadingContext);
+  const { setLoading } = useContext(LoadingContext);
   const [ search, setSearch ] = useState('');
-  const { products, setProducts } = useContext(ProductsContext);
+  const { setProducts } = useContext(ProductsContext);
   const [ result, setResult ] = useState(null)
+  const { backendRoute } = useContext(BackendRouteContext);
 
   const goToTop = () => {
     window.scrollTo({
@@ -21,7 +22,7 @@ const Search = () => {
 
   const FetchSearch = async ()=>{
     setLoading(true);
-    await axios.get('/api/search/' + (search?search:'all')).then((response) => {
+    await axios.get(`${backendRoute}api/search/` + (search?search:'all')).then((response) => {
       const result = JSON.parse(response.request.response)
       const data = [];
       result.data.map((item, index) => (
@@ -34,7 +35,7 @@ const Search = () => {
   }
 
   const fetchAutocomplite = () => {
-      axios.get('/api/autocomplete/' + search).then((response) => {
+      axios.get(`${backendRoute}api/autocomplete/` + search).then((response) => {
        const result = JSON.parse(response.request.response)
        const data =[]
        result.data.map((item, index) => (

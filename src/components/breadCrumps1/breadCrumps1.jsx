@@ -1,16 +1,15 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import Path from "../routes/menuItem";
-import { NavLink, Route, Routes} from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import useBreadcrumbs from 'use-react-router-breadcrumbs';
-import { BreadcrumbContext } from "../useContext/useContext";
 import Style from './breadcrumbs.module.scss'
 
 
 // map & render your breadcrumb components however you want.
 export const Breadcrumbs = (props) => {
-  const DynamicUserBreadcrumb = () => (
-    <span>{props.id.title.replace(/[\w]{24}/g,'')}</span>
-  );
+  // const DynamicUserBreadcrumb = () => (
+  //   <span>{props.id.title.replace(/[\w]{24}/g,'')}</span>
+  // );
   
   // const Path = [
   //   {

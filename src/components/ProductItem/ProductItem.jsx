@@ -4,14 +4,8 @@ import TopBar from "../../elements/productTopBar/productTopBar";
 import Availabilty from "../../elements/availability.jsx/availability";
 import Rating from "../../elements/rating/rating";
 import { Link } from "react-router-dom";
-import {
-  createSignal,
-  partitionByKey,
-  combineKeys,
-  mergeWithKey,
-} from "@react-rxjs/utils";
 import { useDispatchCart } from "../useContext/cartContext";
-import Path from "../routes/menuItem";
+// import Path from "../routes/menuItem";
 import LinkCustom from "../../elements/link/link";
 import { MobileViewContext } from "../useContext/useContext";
 import Icon from "../../elements/icon/icon";
@@ -19,10 +13,8 @@ import Counter from "../../elements/counter/counter";
 
 
 const ProductItem = (props) => {
-  const [bucket$, addBucket] = createSignal();
   const dispatch = useDispatchCart();
-  const { mobileView, setMobileView } = useContext(MobileViewContext);
-  const [itemQuantity, setitemQuantity] = useState()
+  const { mobileView } = useContext(MobileViewContext);
   const [value, setValue] = useState(1);
 
   const removeFromCart = (index, quantity) => {
@@ -124,27 +116,27 @@ const ProductItem = (props) => {
   // ]
   
   let same = ''
-  Path.map((item) => {
-    if(props.category === item.id) {
-      // console.log('first');
-        item.children.map((item)=>{
-          if(props.subcategory === item.subId) {
-            console.log('second');
-            return same = item.path
-          }
-          else if(!(props.subcategory === item.subId)) {
-            item.children.map((item)=>{
-              if(props.subcategory === item.subId) {
-                console.log('third');
-                return same = item.link
-              }
-            })
-          }
-        })
+  // Path.map((item) => {
+  //   if(props.category === item.id) {
+  //     // console.log('first');
+  //       item.children.map((item)=>{
+  //         if(props.subcategory === item.subId) {
+  //           console.log('second');
+  //           return same = item.path
+  //         }
+  //         else if(!(props.subcategory === item.subId)) {
+  //           item.children.map((item)=>{
+  //             if(props.subcategory === item.subId) {
+  //               console.log('third');
+  //               return same = item.link
+  //             }
+  //           })
+  //         }
+  //       })
       
-    }
+  //   }
 
-  })
+  // })
 
   const checkQuantity = () => {
     return (props.quantity === 0)?true:false;

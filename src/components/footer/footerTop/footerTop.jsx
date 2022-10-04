@@ -5,7 +5,7 @@ import { MobileViewContext } from "../../useContext/useContext";
 import FooterContacts from "./footerContacts/footerContacts";
 
 const FooterTop = () => {
-  const  { mobileView, setMobileView } = useContext(MobileViewContext);
+  const  { mobileView } = useContext(MobileViewContext);
   
   const links = [{
     title: 'Каталог',

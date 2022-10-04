@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { MobileViewContext } from "../useContext/useContext";
+import React from "react";
 import Style from './footer.module.scss'
 import FooterBottom from "./footerBottom/footerBottom";
 import FooterTop from "./footerTop/footerTop";

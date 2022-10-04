@@ -1,14 +1,14 @@
 import axios from 'axios';
 import { useContext, useEffect, useRef, useState } from 'react';
 import ProductItem from '../ProductItem/ProductItem';
-import { LoadingContext, MobileViewContext, ProductsContext, RangeInputContext } from '../useContext/useContext';
+import { BackendRouteContext, LoadingContext, ProductsContext, RangeInputContext } from '../useContext/useContext';
 import CustomRangeInput from '../../elements/CustomRangeInput/CustomRangeInput'
 import Style from './filters.module.scss'
 import {ReactComponent as FilterLogo} from '../../assets/icons/Filter.svg'
 
 const Filters = (props) => {
-  const { RangeInputPrice } = useContext(RangeInputContext)
-  const { products, setProducts } = useContext(ProductsContext);
+  const { rangeInputPrice } = useContext(RangeInputContext)
+  const { setProducts } = useContext(ProductsContext);
   const [ Brends, setBrends ] = useState();
   const [ reset, setReset ] = useState(false);
   const [ open, setOpen ] = useState(false);
@@ -17,12 +17,12 @@ const Filters = (props) => {
   const [ MinPrice, setMinPrice ] = useState();
   const [ PriceRange, setPriceRange ] = useState();
   const [ Checked, setChecked ] = useState([]);
-  const { loading, setLoading } = useContext(LoadingContext);
-  const { mobileView, setMobileView } = useContext(MobileViewContext);
+  const { setLoading } = useContext(LoadingContext);
+  const { backendRoute } = useContext(BackendRouteContext);
   const checkRef = useRef()
 
   const FetchBrends = async ()=>{
-    await axios.get('/api/brends').then((response) => { 
+    await axios.get(`${backendRoute}api/brends`).then((response) => { 
       const result = JSON.parse(response.request.response)
       setBrends(result.data); 
     })   
@@ -43,7 +43,7 @@ const Filters = (props) => {
   const FetchProducts = async ()=>{
     goToTop();
     setLoading(true);
-    await axios.get('/api/Threadmills').then((response) => {
+    await axios.get(`${backendRoute}api/Threadmills`).then((response) => {
       const result = JSON.parse(response.request.response)
       setMaxPrice(keyValExtremums(result.data, 'price', false));
       setMinPrice(keyValExtremums(result.data, 'price', true))
@@ -109,13 +109,13 @@ const Filters = (props) => {
   },[Filters])
 
   useEffect (()=>{
-    setPriceRange(RangeInputPrice)
-  },[RangeInputPrice])
+    setPriceRange(rangeInputPrice)
+  },[rangeInputPrice])
 
   const filterFetch = async ()=>{
     goToTop();
     setLoading(true);
-    await axios.get(`/api/filter/?` + Filters).then((response) => {
+    await axios.get(`${backendRoute}api/filter/?` + Filters).then((response) => {
       
       const result = JSON.parse(response.request.response)
       const data = [];

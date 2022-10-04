@@ -16,7 +16,7 @@ export const  BreadcrumbContext = createContext({
 });
 
 export const  RangeInputContext = createContext({
-  RangeInputPrice: [],
+  rangeInputPrice: [],
   setRangeInputPrice: () => {}
 });
 

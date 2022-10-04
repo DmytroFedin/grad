@@ -5,10 +5,11 @@ import Style from './bucket.module.scss';
 import { useCart } from "../../components/useContext/cartContext";
 
 const Bucket = () => {
+  useCart()
+  
   if (!localStorage.product) {
     localStorage.setItem('product', JSON.stringify([]));
   }
-  const item = useCart()
   const [open, setOpen] = useState(false)
   let localBucket = JSON.parse(localStorage.getItem('product'));
   const itemValue = () =>{

@@ -1,19 +1,18 @@
 
 import { useContext, useState } from 'react';
 import Filters from '../../components/filters/filters';
-import {LoadingContext, ProductsContext, RangeInputContext, MobileViewContext} from '../../components/useContext/useContext';
+import {LoadingContext, ProductsContext, MobileViewContext} from '../../components/useContext/useContext';
 import Loader from '../../elements/loader/loader';
 import Pagination from '../../elements/Pagination/pagination';
 import Style from './searchPage.module.scss';
 
  const SearchPage = () => {
-  const { RangeInputPrice } = useContext(RangeInputContext)
-  const { products, setProducts } = useContext(ProductsContext);
+  const { products } = useContext(ProductsContext);
   const [ currentProducts, setCurrentProducts ] = useState([]);
   const [ currentPage, setCurrentPage ] = useState(null);
   const [ totalPages, setTotalPages ] = useState(null);
-  const { loading, setLoading } = useContext(LoadingContext);
-  const { mobileView, setMobileView } = useContext(MobileViewContext);
+  const { loading } = useContext(LoadingContext);
+  const { mobileView } = useContext(MobileViewContext);
 
   const onPageChanged = (data) => {
     const { currentPage, totalPages, pageLimit } = data;

@@ -6,7 +6,7 @@ import { MobileViewContext } from '../../../useContext/useContext'
 import Style from './footerContacts.module.scss'
 
 const FooterContacts = (props) => {
-  const  {mobileView, setMobileView } = useContext(MobileViewContext);
+  const  {mobileView } = useContext(MobileViewContext);
   return (
       <div className={props.rowMode?`${Style.info} ${Style.infoRow}`:Style.info}>
           {props.rowMode?'':<div className={Style.item}><LinkCustom redBorderEmptyMode={true} text='Подписаться на рассылку' GrayStyle={true} /></div>}

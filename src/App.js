@@ -8,12 +8,6 @@ import Footer from './components/footer/footer';
 import React, { useMemo, useState, useEffect } from "react";
 import {LoadingContext, ProductsContext, BreadcrumbContext, RangeInputContext, MobileViewContext, BackendRouteContext} from './components/useContext/useContext';
 import AuthPage from './pages/auth/auth';
-import {
-  createSignal,
-  partitionByKey,
-  combineKeys,
-  mergeWithKey
-} from "@react-rxjs/utils";
 import { CartProvider } from './components/useContext/cartContext';
 import HomePage from './components/BreadCrumbs/Home-page';
 import ProductsGym from './pages/ProductsGym/productsGym';
@@ -33,13 +27,9 @@ const App = () => {
   const breadcrumbValue = useMemo(() => ({ dynamicBreadcrumb, setDynamicBreadcrumb }), [dynamicBreadcrumb]);
   const [rangeInputPrice, setRangeInputPrice] = useState(false);
   const priceRange = useMemo(() => ({ rangeInputPrice, setRangeInputPrice }), [rangeInputPrice]);
-  const [backendRoute, setBackendRoute] = useState();
+  const [backendRoute, setBackendRoute] = useState('https://grad-backend-server.herokuapp.com/');
   const routeValue = useMemo(() => ({ backendRoute, setBackendRoute }), [backendRoute]);
 
-
-  useEffect(()=>{
-    setBackendRoute('https://grad-backend-server.herokuapp.com/')
-  },[])
   
   if (!localStorage.product) {
     localStorage.setItem('product', JSON.stringify([]));

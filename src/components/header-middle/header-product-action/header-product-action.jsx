@@ -5,7 +5,7 @@ import { MobileViewContext } from "../../useContext/useContext";
 import Style from './header-product-action.module.scss'
 
 const HeaderProduct = () => {
-  const  { mobileView, setMobileView } = useContext(MobileViewContext);
+  const  { mobileView } = useContext(MobileViewContext);
 
   return(
     <>

@@ -1,15 +1,18 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { BackendRouteContext } from '../useContext/useContext';
 import Style from './brends.module.scss' 
 
 const Brends = () => {
   const [brands, setBrands] = useState();
+  const { backendRoute } = useContext(BackendRouteContext);
+
   useEffect (() => {
     FetchBrends()
   },[])
   
   const FetchBrends = async ()=>{
-    await axios.get('/api/brends').then((response) => {
+    await axios.get(`${backendRoute}api/brends`).then((response) => {
       
       const result = JSON.parse(response.request.response)
       setBrands(result.data)
