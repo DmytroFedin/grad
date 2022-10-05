@@ -22,11 +22,12 @@ const Search = () => {
 
   const FetchSearch = async ()=>{
     setLoading(true);
-    await axios.get(`${backendRoute}api/search/` + (search?search:'all')).then((response) => {
+    await axios.get(`/api/search/` + (search?search:'all')).then((response) => {
       const result = JSON.parse(response.request.response)
       const data = [];
+      console.log(result.data);
       result.data.map((item, index) => (
-        data.push(<ProductItem yearsGuarantee={[0,0,0,0,0]} additionalGuarantee={0} guaranteePrice={0}  product={item.product} shortening={true} view='full' category={item.category} subcategory={item.subcategory} key={index} productId={item._id} discountMode={false} title={item.name} rating={item.rating} poster={item.image} availability={item.availability} price={item.price} quantity={item.quantity} type={item.type} runningBeltType={item.runningBeltType} runningBeltLength={item.runningBeltLength} manufacturer={item.manufacturer} engine={item.engine}/>)
+        data.push(<ProductItem yearsGuarantee={item.yearsGuarantee} additionalGuarantee={item.additionalGuarantee} guaranteePrice={item.guaranteePrice} product={item.product} shortening={true} view='full' category={item.category} subcategory={item.subcategory} key={index} productId={item._id} discountMode={false} title={item.name} rating={item.rating} poster={item.image} availability={item.availability} price={item.price} quantity={item.quantity} type={item.type} runningBeltType={item.runningBeltType} runningBeltLength={item.runningBeltLength} manufacturer={item.manufacturer} engine={item.engine}/>)
         )) 
         setProducts(data);
       })   

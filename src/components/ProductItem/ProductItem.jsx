@@ -29,6 +29,7 @@ const ProductItem = (props) => {
     addToCart(item, true, true, index)
   }
 
+
   const buy = (e) => {
     e.preventDefault();
     if (!localStorage.product) {
@@ -196,7 +197,7 @@ const ProductItem = (props) => {
                 </div>
               </div>
             }
-            {/* <div className={Style.guaranteeContainer}>
+            <div className={Style.guaranteeContainer}>
                 {props.yearsGuarantee.map((item, index) => {
                   if (item > 0 ) {
                    return <div key={index} className={Style.guaranteeDisplay}>
@@ -209,7 +210,7 @@ const ProductItem = (props) => {
                   }
                 })
                   }
-              </div> */}
+              </div>
             </div>
             <div className={Style.btnSection}>
               <div className={Style.likedBtn}>

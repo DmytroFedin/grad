@@ -43,13 +43,13 @@ const Filters = (props) => {
   const FetchProducts = async ()=>{
     goToTop();
     setLoading(true);
-    await axios.get(`${backendRoute}api/Threadmills`).then((response) => {
+    await axios.get(`${backendRoute}api/search/all`).then((response) => {
       const result = JSON.parse(response.request.response)
       setMaxPrice(keyValExtremums(result.data, 'price', false));
       setMinPrice(keyValExtremums(result.data, 'price', true))
       const data = [];
       result.data.map((item, index) => (
-        data.push(<ProductItem yearsGuarantee={[0,0,0,0,0]} additionalGuarantee={0} guaranteePrice={0} shortening={true} view='full' product={item.product} category={item.category} subcategory={item.subcategory} key={index} productId={item._id} discountMode={false} title={item.name} rating={item.rating} poster={item.image} availability={item.availability} price={item.price} quantity={item.quantity} type={item.type} runningBeltType={item.runningBeltType} runningBeltLength={item.runningBeltLength} manufacturer={item.manufacturer} engine={item.engine}/>)
+        data.push(<ProductItem yearsGuarantee={item.yearsGuarantee} additionalGuarantee={item.additionalGuarantee} guaranteePrice={item.guaranteePrice} shortening={true} view='full' product={item.product} category={item.category} subcategory={item.subcategory} key={index} productId={item._id} discountMode={false} title={item.name} rating={item.rating} poster={item.image} availability={item.availability} price={item.price} quantity={item.quantity} type={item.type} runningBeltType={item.runningBeltType} runningBeltLength={item.runningBeltLength} manufacturer={item.manufacturer} engine={item.engine}/>)
         )) 
       setProducts(data);
     })   
@@ -66,6 +66,7 @@ const Filters = (props) => {
       FetchProducts()
       
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[Checked, PriceRange])
   
   useEffect(() => {
@@ -106,6 +107,7 @@ const Filters = (props) => {
     if(Filters) {
       filterFetch();  
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[Filters])
 
   useEffect (()=>{
@@ -121,14 +123,12 @@ const Filters = (props) => {
       const data = [];
       if (result.data.length > 0) {
         result.data.map((item, index) => (
-          data.push(<ProductItem yearsGuarantee={[0,0,0,0,0]} additionalGuarantee={0} guaranteePrice={0} shortening={true} view='full' product={item.product} category={item.category} subcategory={item.subcategory} key={index} productId={item._id} discountMode={false} title={item.name} rating={item.rating} poster={item.image} availability={item.availability} price={item.price} quantity={item.quantity} type={item.type} runningBeltType={item.runningBeltType} runningBeltLength={item.runningBeltLength} manufacturer={item.manufacturer} engine={item.engine}/>)
+          data.push(<ProductItem yearsGuarantee={item.yearsGuarantee} additionalGuarantee={item.additionalGuarantee} guaranteePrice={item.guaranteePrice} shortening={true} view='full' product={item.product} category={item.category} subcategory={item.subcategory} key={index} productId={item._id} discountMode={false} title={item.name} rating={item.rating} poster={item.image} availability={item.availability} price={item.price} quantity={item.quantity} type={item.type} runningBeltType={item.runningBeltType} runningBeltLength={item.runningBeltLength} manufacturer={item.manufacturer} engine={item.engine}/>)
           )) 
         setProducts(data);
-     
       }
       else {
-        setProducts('0');
-        
+        setProducts('0');   
     }
     })  
     setLoading(false); 

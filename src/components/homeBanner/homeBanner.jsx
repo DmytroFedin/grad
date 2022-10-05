@@ -84,7 +84,7 @@ const Banner = (props) => {
     >
     {(props.PromotionMode)? result.map((item, index) => (
       <SwiperSlide key = {index}>
-        <ProductItem view={'full'} category={item.category} subcategory={item.subcategory} productId={item._id} opacityMode={index === 4} PromotionMode={true} title={item.name} rating={item.rating} poster={item.image} availability={item.availability} price={item.price} quantity={item.quantity} type={item.type} runningBeltType={item.runningBeltType} runningBeltLength={item.runningBeltLength} manufacturer={item.manufacturer} engine={item.engine}/>
+        <ProductItem yearsGuarantee={item.yearsGuarantee} additionalGuarantee={item.additionalGuarantee} guaranteePrice={item.guaranteePrice} product={item.product} shortening={true} view={'full'} category={item.category} subcategory={item.subcategory} productId={item._id} opacityMode={index === 4} PromotionMode={true} title={item.name} rating={item.rating} poster={item.image} availability={item.availability} price={item.price} quantity={item.quantity} type={item.type} runningBeltType={item.runningBeltType} runningBeltLength={item.runningBeltLength} manufacturer={item.manufacturer} engine={item.engine}/>
       </SwiperSlide>
         )) :
       <>

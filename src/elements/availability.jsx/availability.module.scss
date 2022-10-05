@@ -44,7 +44,8 @@
 }
 
 .availabilityNormal {
-  gap: 10px;
+  gap: 5px;
+  justify-content: space-between;
   
   @media (max-width: $m-tablet) {
     gap: 0;
