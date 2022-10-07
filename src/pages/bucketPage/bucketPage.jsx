@@ -97,7 +97,7 @@ const BucketPage = () => {
       total += localBucket[i].sum; 
       quantity += localBucket[i].quantity;
     }
-    settotalSum(total);
+    settotalSum(total.toFixed(2));
     setTotalQuantity(quantity);
 
   },[localBucket])

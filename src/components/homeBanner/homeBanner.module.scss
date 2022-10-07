@@ -23,8 +23,12 @@
   }
 }
 
-.wrapper{
+.wrapper {
   height: 560px !important;
+
+  @media (max-width: $m-tablet) {
+    height: 490px !important;
+  }
 }
 
 .slide{
