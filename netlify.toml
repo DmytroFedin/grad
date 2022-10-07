@@ -17,3 +17,8 @@
   from = "/auth"
   to = "/auth"
   status = 200
+
+   [[redirects]]
+  from = "/auth/authorisation"
+  to = "/auth/authorisation
+  status = 200
