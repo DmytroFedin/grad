@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import Style from './auth.module.scss';
 import { Formik } from 'formik';
 import axios from 'axios';
+import { BackendRouteContext } from "../../components/useContext/useContext";
 
 const AuthPage = () =>{
+  const { backendRoute } = useContext(BackendRouteContext);
 
     const onSubmit1 = async (
       values,
@@ -13,7 +15,7 @@ const AuthPage = () =>{
       header.append('Content-Type', 'application/json')
       try {
         await axios
-          .post('/api/auth/authorisation', values, header)
+          .post(`${backendRoute}/api/auth/authorisation`, values, header)
           .then((response) => {
             console.log(response);
             setStatus({ success: true });
