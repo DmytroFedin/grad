@@ -6,7 +6,7 @@ import Path from './components/routes/menuItem';
 import CardioG from './pages/ProductsGym/Cardio/cardio';
 import Footer from './components/footer/footer';
 import React, { useMemo, useState, useEffect } from "react";
-import {LoadingContext, ProductsContext, BreadcrumbContext, RangeInputContext, MobileViewContext, BackendRouteContext} from './components/useContext/useContext';
+import {LoadingContext, ProductsContext, BreadcrumbContext, RangeInputContext, MobileViewContext, BackendRouteContext, RegistrationModalContext} from './components/useContext/useContext';
 import AuthPage from './pages/auth/auth';
 import { CartProvider } from './components/useContext/cartContext';
 import HomePage from './components/BreadCrumbs/Home-page';
@@ -29,6 +29,8 @@ const App = () => {
   const priceRange = useMemo(() => ({ rangeInputPrice, setRangeInputPrice }), [rangeInputPrice]);
   const [backendRoute, setBackendRoute] = useState('https://grad-backend-server.herokuapp.com/');
   const routeValue = useMemo(() => ({ backendRoute, setBackendRoute }), [backendRoute]);
+  const [open, setOpen] = useState(false);
+  const registrationValue = useMemo(() => ({ open, setOpen }), [open]);
 
   
   if (!localStorage.product) {
@@ -88,6 +90,7 @@ const App = () => {
         <BreadcrumbContext.Provider value={breadcrumbValue}>
         <MobileViewContext.Provider value={viewValue}>
         <BackendRouteContext.Provider value={routeValue}>
+        <RegistrationModalContext.Provider value={registrationValue}>
         <CartProvider>
         <Header />
           {routes}
@@ -98,6 +101,7 @@ const App = () => {
         {/* </Routes> */}
         <Footer />
         </CartProvider>
+        </RegistrationModalContext.Provider>
         </BackendRouteContext.Provider>
         </MobileViewContext.Provider>
         </BreadcrumbContext.Provider>

@@ -1,27 +1,39 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import Icon from "../../../elements/icon/icon";
+import AuthPage from "../../../pages/auth/auth";
+import { RegistrationModalContext } from "../../useContext/useContext";
 import Style from './header-login.module.scss'
 
 
 const HeaderLogin = (props) => {
+  const [ openModal, setOpenModal ] = useState(false);
+  const { open, setOpen } = useContext(RegistrationModalContext);
+  console.log(open);
+  
   return(
     <>
     {props.menuMode?
-      <Link to='/auth' className={props.menuMode?`${Style.loginContainer} ${Style.loginContainerMenuMode}` :Style.loginContainer}>
+      <div to='/auth' className={props.menuMode?`${Style.loginContainer} ${Style.loginContainerMenuMode}`:Style.loginContainer} onClick={() => {setOpenModal(!open)}}>
         <div className={Style.icon}>
           <Icon link='#icon-login'/>
         </div>
         <span>Войти</span>
-      </Link>
+      </div>
       :
-      <Link to='/auth' className={Style.loginContainer}>
+      <div to='/auth' className={Style.loginContainer} onClick={() => {setOpenModal(!open)}}>
         <span>Войти</span>
         <div className={Style.icon}>
           <Icon link='#icon-login'/>
         </div>
-      </Link>
+      </div>
     }
+      {openModal &&
+      <AuthPage login={true} open={openModal}  setOpen={setOpenModal}/>
+      }
+      {open &&
+      <AuthPage login={false} open={open}  setOpen={setOpen}/>
+      }
     </>
   )
 }

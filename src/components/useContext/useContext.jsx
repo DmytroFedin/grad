@@ -7,7 +7,7 @@ export const ProductsContext = createContext({
 
 export const  LoadingContext = createContext({
   loading: false,
-  setBucket: () => {}
+  setLoading: () => {}
 });
 
 export const  BreadcrumbContext = createContext({
@@ -28,4 +28,9 @@ export const  MobileViewContext = createContext({
 export const  BackendRouteContext = createContext({
   backendRoute: {},
   setBackendRoute: () => {}
+});
+
+export const RegistrationModalContext = createContext({
+  open: false,
+  setOpen: () => {}
 });

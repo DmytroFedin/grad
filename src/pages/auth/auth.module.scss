@@ -1,8 +1,15 @@
+@import '../../style/variables.scss';
+
 .container{
-  height: 81vh;
-  margin-top: 205px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
+  z-index: 1;
 }
 
 .authPage{
@@ -12,4 +19,157 @@
   align-items: center;
   flex-direction: column;
   gap: 30px;
+  padding: 50px 70px;
+  flex-direction: column;
+  max-width: 600px;
+  width: 100%;
+  height: 525px;
+  background-color: $c-white;
+  border-radius: 5px;
+  font-family: $f-inter-bold;
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+
+  &Success {
+
+  }
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.input {
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid $c-inputBg;
+  padding: 10px 20px;
+  width: 100%;
+  height: 50px;
+  font-size: $fs-base + px;
+  background-color: $c-inputBg;
+
+  &:nth-child(3) {
+    margin-top: 30px;
+  }
+
+  &:nth-child(4) {
+    margin-top: 10px;
+  }
+}
+
+.error {
+  border: 1px solid $c-light-red;
+
+  &Text {
+    position: absolute;
+    bottom: 115px;
+    color: $c-light-red;
+
+    &Login {
+      top: 55px;
+    }
+  }
+
+  &Password {
+    position: absolute;
+    bottom: -20px;
+    color: $c-light-red;
+  }
+}
+
+
+.showPassword {
+  width: 20px;
+  height: 16px;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  cursor: pointer;
+
+  &Higher {
+    bottom: 75px;
+  }
+}
+
+.form {
+  width: 100%;
+  position: relative;
+  gap: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.iconsContainer {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+
+  &:hover {
+    >svg >path {
+      fill: $c-light-blue !important;
+    }
+  }
+}
+
+.additionalEnter {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-family: $f-inter-reg;
+  font-size: $fs-base  + px;
+}
+
+.regFont {
+  font-family: $f-inter-reg;
+}
+
+.heading {
+  font-size: $fs-soc-icon + px;
+}
+
+.btnBox {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.redBtn {
+  outline: none;
+  width: 180px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: $c-light-red;
+  color: $c-white;
+  border: none;
+  font-family: $f-inter-bold;
+  cursor: pointer;
+  transition: $t-normal;
+  margin: 0 auto;
+
+  &:hover {
+    background-color: $c-light-blue;
+    color: $c-black;
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+}
+
+.checkmark {
+  width: 200px;
+  fill: $c-green
+}
+
+.message {
+  font-size: $fs-soc-icon + px;
 }
