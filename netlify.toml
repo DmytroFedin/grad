@@ -3,22 +3,17 @@
   to = "/index.html"
   status = 200
 
-  [[redirects]]
-  from = "/search"
-  to = "/search"
-  status = 200
+[[redirects]]
+from = "/search"
+to = "/search"
+status = 200
 
-  [[redirects]]
-  from = "/cart"
-  to = "/cart"
-  status = 200
+[[redirects]]
+from = "/cart"
+to = "/cart"
+status = 200
 
-  [[redirects]]
-  from = "/auth"
-  to = "/auth"
-  status = 200
-
-   [[redirects]]
-  from = "/auth/authorisation"
-  to = "/auth/authorisation
-  status = 200
+[[redirects]]
+from = "/auth"
+to = "/auth"
+status = 200
