@@ -6,7 +6,7 @@ import Path from './components/routes/menuItem';
 import CardioG from './pages/ProductsGym/Cardio/cardio';
 import Footer from './components/footer/footer';
 import React, { useMemo, useState, useEffect } from "react";
-import {LoadingContext, ProductsContext, BreadcrumbContext, RangeInputContext, MobileViewContext, BackendRouteContext, RegistrationModalContext} from './components/useContext/useContext';
+import {LoadingContext, ProductsContext, BreadcrumbContext, RangeInputContext, MobileViewContext, BackendRouteContext, RegistrationModalContext, IsAuthContext, LoggedUserContext} from './components/useContext/useContext';
 import AuthPage from './pages/auth/auth';
 import { CartProvider } from './components/useContext/cartContext';
 import HomePage from './components/BreadCrumbs/Home-page';
@@ -14,6 +14,7 @@ import ProductsGym from './pages/ProductsGym/productsGym';
 import CardioH from './pages/ProductsHome/Cardio/cardio';
 import  SearchPage from './pages/searchPage/searchPage';
 import BucketPage from './pages/bucketPage/bucketPage';
+import axios from 'axios';
 
 const App = () => {
   // const [bucket$, addBucket$] = createSignal();
@@ -29,8 +30,29 @@ const App = () => {
   const priceRange = useMemo(() => ({ rangeInputPrice, setRangeInputPrice }), [rangeInputPrice]);
   const [backendRoute, setBackendRoute] = useState('https://grad-backend-server.herokuapp.com/');
   const routeValue = useMemo(() => ({ backendRoute, setBackendRoute }), [backendRoute]);
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState([false, false]);
   const registrationValue = useMemo(() => ({ open, setOpen }), [open]);
+  const [isAuth, setIsAuth] = useState(false);
+  const authValue = useMemo(() => ({ isAuth, setIsAuth }), [isAuth]);
+  const [user, setUser] = useState([]);
+  const userValue = useMemo(() => ({ user, setUser }), [user]);
+
+  useEffect(()=> {
+    if (localStorage.getItem('token')){
+      checkAuth()
+    }
+  },[])
+
+  const checkAuth = async () => {
+    try {
+      const response = await axios.get(`${backendRoute}api/auth/refresh`, {withCredentials: true});
+      localStorage.setItem('token', response.data.accessToken);
+      setIsAuth(true);
+      setUser(response.data.user)
+    } catch (e) {
+      console.log(e.response.data.message)
+    }
+  }
 
   
   if (!localStorage.product) {
@@ -84,6 +106,8 @@ const App = () => {
     <>
       {/* <Router> */}
         <ReactIcons/>
+        <LoggedUserContext.Provider value={userValue}>
+        <IsAuthContext.Provider value={authValue}>
         <RangeInputContext.Provider value={priceRange}>
         <ProductsContext.Provider value={productsValue}>
         <LoadingContext.Provider value={loadingValue}>
@@ -108,6 +132,8 @@ const App = () => {
         </LoadingContext.Provider>
         </ProductsContext.Provider>
         </RangeInputContext.Provider>
+        </IsAuthContext.Provider>
+        </LoggedUserContext.Provider>
       {/* </Router> */}
     </>
   );

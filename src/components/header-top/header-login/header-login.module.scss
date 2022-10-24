@@ -1,19 +1,19 @@
 .loginContainer{
-  max-width: 80px;
+  max-width: 190px;
   height: 20px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  flex-direction: column;
 
   &:hover{
     filter: brightness(1.2);
   }
 
   &MenuMode{
-    height: 40px;
-    max-width: 90px;
+    height: 80px;
   }
 }
 

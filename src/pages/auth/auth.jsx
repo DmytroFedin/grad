@@ -1,16 +1,18 @@
 import React, { useContext, useRef, useState } from "react";
 import Style from './auth.module.scss';
-import { Formik } from 'formik';
 import axios from 'axios';
-import { BackendRouteContext, RegistrationModalContext } from "../../components/useContext/useContext";
+import { Formik } from 'formik';
+import { BackendRouteContext, IsAuthContext, LoggedUserContext, RegistrationModalContext } from "../../components/useContext/useContext";
 import DealerBtns from "../../elements/dealerBtns/dealerBtns";
-import Icon from "../../elements/icon/icon";
 import {ReactComponent as Eye} from "../../assets/icons/showPassword.svg";
 import {ReactComponent as Facebook} from "../../assets/icons/facebook.svg";
 import {ReactComponent as Checkmark} from "../../assets/icons/checkmark.svg";
 import CloseBtn from "../../elements/closeBtn/closeBtn";
+import $api from "../../elements/apiAuth/apiAuth";
 
  const AuthPage = (props) =>{
+  const { setUser } = useContext(LoggedUserContext);
+  const { setIsAuth } = useContext(IsAuthContext);
   const { backendRoute } = useContext(BackendRouteContext);
   const [ inputType, setInputType ] = useState('password')
   const dropdownRef = useRef(null);
@@ -18,7 +20,7 @@ import CloseBtn from "../../elements/closeBtn/closeBtn";
   
   const checkIfClickedOutside = (e) => {
     if ( dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-      props.setOpen(!props.open)
+      setOpen([false, false])
     }
   }
 
@@ -36,14 +38,19 @@ import CloseBtn from "../../elements/closeBtn/closeBtn";
       { setSubmitting, setErrors, setStatus, resetForm }
     ) => {
       const header = new Headers();
-      header.append('Content-Type', 'application/json')
+      header.append('Content-Type', 'application/json');
       try {
         await axios
-          .post(`${backendRoute}api/auth/authorisation`, values, header)
+          .post(props.login?`${backendRoute}api/auth/login`:`${backendRoute}api/auth/authorisation`, values, header)
           .then((response) => {
-            console.log(response.data.message);
+            console.log(response);
             resetForm({});
             setStatus({ success: true, message: response.data.message});
+            if (props.login) {
+              localStorage.setItem('token', response.data.accessToken);
+              setUser(response.data.user);
+              setIsAuth(true);
+            }
           })
           .catch((error) => {
             console.log(error.response.data.message);
@@ -158,7 +165,7 @@ import CloseBtn from "../../elements/closeBtn/closeBtn";
               <button className={Style.redBtn} type='submit' disabled={isSubmitting || errors.email || errors.password}>
                 Войти
               </button>
-              <span onClick={()=>{props.setOpen(!props.open);setOpen(true)}} className={Style.regFont} >Зарегистрироваться</span>
+              <span onClick={()=>{setOpen([false, true])}} className={Style.regFont} >Зарегистрироваться</span>
               </div>
               :
               <button className={Style.redBtn} type='submit' disabled={isSubmitting || errors.email || errors.password}>
@@ -172,7 +179,7 @@ import CloseBtn from "../../elements/closeBtn/closeBtn";
           )}
         </Formik>
         <div className={Style.closeBtn}>
-          <CloseBtn bigMode={true} setState={props.setOpen} state={props.open} />
+          <CloseBtn bigMode={true} />
         </div>
         </div>
       </div>

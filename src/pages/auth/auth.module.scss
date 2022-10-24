@@ -9,7 +9,7 @@
   background: rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
-  z-index: 1;
+  z-index: 101;
 }
 
 .authPage{
@@ -32,8 +32,9 @@
   left:50%;
   transform: translate(-50%,-50%);
 
-  &Success {
-
+  @media (max-width: $m-bigPhone) {
+    padding: 50px 40px;
+    gap: 20px;
   }
 }
 
@@ -130,6 +131,7 @@
 
 .heading {
   font-size: $fs-soc-icon + px;
+  text-align: center;
 }
 
 .btnBox {

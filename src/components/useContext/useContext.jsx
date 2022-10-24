@@ -31,6 +31,16 @@ export const  BackendRouteContext = createContext({
 });
 
 export const RegistrationModalContext = createContext({
-  open: false,
+  open: [false, false],
   setOpen: () => {}
+});
+
+export const IsAuthContext = createContext({
+  isAuth: false,
+  setIsAuth: () => {}
+});
+
+export const LoggedUserContext = createContext({
+  user: [],
+  setUser: () => {}
 });
