@@ -15,7 +15,6 @@ import CardioH from './pages/ProductsHome/Cardio/cardio';
 import SearchPage from './pages/searchPage/searchPage';
 import BucketPage from './pages/bucketPage/bucketPage';
 import axios from 'axios';
-import $api from './elements/apiAuth/apiAuth';
 
 const App = () => {
   // const [bucket$, addBucket$] = createSignal();
@@ -46,7 +45,7 @@ const App = () => {
 
   const checkAuth = async () => {
     try {
-      const response = await $api.get(`${backendRoute}api/auth/refresh`, {withCredentials: true});
+      const response = await axios.get(`${backendRoute}api/auth/refresh`, {withCredentials: true});
       localStorage.setItem('token', response.data.accessToken);
       setIsAuth(true);
       setUser(response.data.user)
