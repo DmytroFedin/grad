@@ -25,7 +25,7 @@ const Search = () => {
 
   const FetchSearch = async ()=>{
     setLoading(true);
-    await axios.get(`/api/search/` + (search?search:'all')).then((response) => {
+    await axios.get(`${backendRoute}/api/search/` + (search?search:'all')).then((response) => {
       const result = JSON.parse(response.request.response)
       const data = [];
       console.log(result.data);
