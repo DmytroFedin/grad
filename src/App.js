@@ -28,7 +28,7 @@ const App = () => {
   const breadcrumbValue = useMemo(() => ({ dynamicBreadcrumb, setDynamicBreadcrumb }), [dynamicBreadcrumb]);
   const [rangeInputPrice, setRangeInputPrice] = useState(false);
   const priceRange = useMemo(() => ({ rangeInputPrice, setRangeInputPrice }), [rangeInputPrice]);
-  const [backendRoute, setBackendRoute] = useState('https://grad-beetroot.deta.dev');
+  const [backendRoute, setBackendRoute] = useState('https://grad-beetroot.deta.dev/');
   const routeValue = useMemo(() => ({ backendRoute, setBackendRoute }), [backendRoute]);
   const [open, setOpen] = useState([false, false]);
   const registrationValue = useMemo(() => ({ open, setOpen }), [open]);
