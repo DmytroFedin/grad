@@ -1,7 +1,9 @@
 import axios from 'axios';
 import React, {useContext, useEffect, useRef, useState} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import ProductItem from '../components/ProductItem/ProductItem';
+import { fetchPosts, fetchProducts, FetchProducts, productsLoaded, selectAllProducts } from '../components/store/productsSlice/productsSlice';
 import {BackendRouteContext, LoadingContext, ProductsContext} from '../components/useContext/useContext';
 import Icon from '../elements/icon/icon';
 import Style from './search.module.scss';
@@ -12,6 +14,7 @@ const Search = () => {
   const { setProducts } = useContext(ProductsContext);
   const [ result, setResult ] = useState(null)
   const { backendRoute } = useContext(BackendRouteContext);
+  const dispatch = useDispatch();
 
   const goToTop = () => {
     window.scrollTo({

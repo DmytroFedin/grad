@@ -14,22 +14,22 @@ const HeaderLogin = (props) => {
   return(
     <>
     {props.menuMode? isAuth?
-      <div to='/auth' className={props.menuMode?`${Style.loginContainer} ${Style.loginContainerMenuMode}`:Style.loginContainer} onClick={() => {setOpen([true, open[1]])}}>
-        <div className={Style.icon}>
+      <div to='/auth' className={`${Style.loginContainer} ${Style.loginContainerMenuMode}`} onClick={() => {setOpen([true, open[1]])}}>
+        <div className={`${Style.icon} ${Style.iconMenuMode}`}>
           <img src={Login} alt={'Фото профиля'}/>
         </div>
         <span>{user.email}</span>
       </div>
       :
-      <div to='/auth' className={props.menuMode?`${Style.loginContainer} ${Style.loginContainerMenuMode}`:Style.loginContainer} onClick={() => {setOpen([true, open[1]])}}>
-        <div className={Style.icon}>
+      <div to='/auth' className={`${Style.loginContainer} ${Style.loginContainerMenuMode}`} onClick={() => {setOpen([true, open[1]])}}>
+        <div className={`${Style.icon} ${Style.iconNotLogged}`}>
           <Icon link='#icon-login'/>
         </div>
         <span>Войти</span>
       </div>
       :
       isAuth?
-      <div to='/auth' className={Style.loginContainer} onClick={() => {setOpen([true, open[1]])}}>
+      <div to='/auth' className={`${Style.loginContainer} ${Style.loginContainerLogged}` } onClick={() => {setOpen([true, open[1]])}}>
         <span>{user.email}</span>
         <div className={Style.icon}>
           <img src={Login} alt={'Фото профиля'}/>
@@ -38,7 +38,7 @@ const HeaderLogin = (props) => {
       :
       <div to='/auth' className={Style.loginContainer} onClick={() => {setOpen([true, open[1]])}}>
         <span>Войти</span>
-        <div className={Style.icon}>
+        <div className={`${Style.icon} ${Style.iconNotLogged}`}>
           <Icon link='#icon-login'/>
         </div>
       </div>

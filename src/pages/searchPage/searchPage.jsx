@@ -1,18 +1,21 @@
 
 import { useContext, useState } from 'react';
+import { useSelector } from 'react-redux';
 import Filters from '../../components/filters/filters';
+import { selectAllProducts } from '../../components/store/productsSlice/productsSlice';
 import {LoadingContext, ProductsContext, MobileViewContext} from '../../components/useContext/useContext';
 import Loader from '../../elements/loader/loader';
 import Pagination from '../../elements/Pagination/pagination';
 import Style from './searchPage.module.scss';
 
  const SearchPage = () => {
-  const { products } = useContext(ProductsContext);
+  // const { products } = useContext(ProductsContext);
   const [ currentProducts, setCurrentProducts ] = useState([]);
   const [ currentPage, setCurrentPage ] = useState(null);
   const [ totalPages, setTotalPages ] = useState(null);
   const { loading } = useContext(LoadingContext);
   const { mobileView } = useContext(MobileViewContext);
+  const products = useSelector(selectAllProducts);
 
   const onPageChanged = (data) => {
     const { currentPage, totalPages, pageLimit } = data;

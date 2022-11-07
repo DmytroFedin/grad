@@ -1,23 +1,44 @@
-.loginContainer{
+@import '../../../style/variables.scss';
+
+.loginContainer {
   max-width: 190px;
   height: 20px;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  flex-direction: column;
+  gap: 10px;
+  font-family: $f-inter-reg;
 
-  &:hover{
+  &:hover {
     filter: brightness(1.2);
   }
 
-  &MenuMode{
+  &Logged {
+    width: 100%;
+    gap: 0;
+  }
+
+  &MenuMode {
     height: 80px;
+    gap: 0;
+    flex-direction: column;
   }
 }
 
-.icon{
+.icon {
   height: 100%;
+  overflow: hidden;
+  border-radius: 50%;
+
+  &MenuMode {
+    height: 60%;
+  }
+
+  &NotLogged {
+    overflow: unset;
+    border-radius: 0;
+    min-width: 20px;
+  }
 }
 

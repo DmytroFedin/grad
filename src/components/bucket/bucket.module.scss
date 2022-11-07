@@ -1,5 +1,6 @@
 @import '../../style/variables.scss';
-.count{
+
+.count {
   width: 15px;
   height: 15px;
   border-radius: 50%;
@@ -9,15 +10,16 @@
   right: 2px;
   text-align: center;
   color: $c-white;
+  font-size: $fs-mid-small + px;
 }
 
-.container{
+.container {
   width: 40px;
   height: 28px;
   stroke: $c-light-gray;
 }
 
-.open{
+.open {
   position: absolute;
   right: calc(50% - 110px);
   top: 55px;
