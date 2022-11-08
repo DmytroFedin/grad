@@ -1,15 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Icon from "../../../elements/icon/icon";
 import AuthPage from "../../../pages/auth/auth";
-import { IsAuthContext, LoggedUserContext, RegistrationModalContext } from "../../useContext/useContext";
+import { BackendRouteContext, IsAuthContext, LoggedUserContext, RegistrationModalContext } from "../../useContext/useContext";
 import Style from './header-login.module.scss'
 import Login from "../../../assets/images/login.jpg";
+import { logout } from "../../../elements/apiAuth/apiAuth";
 
 
 const HeaderLogin = (props) => {
   const { open, setOpen } = useContext(RegistrationModalContext);
-  const { user } = useContext(LoggedUserContext);
-  const { isAuth } = useContext(IsAuthContext);
+  const { user, setUser } = useContext(LoggedUserContext);
+  const { isAuth, setIsAuth } = useContext(IsAuthContext);
+  const [ openBox, setOpenBox ] = useState(false)
+  const { backendRoute } = useContext(BackendRouteContext);
   
   return(
     <>
@@ -29,7 +32,7 @@ const HeaderLogin = (props) => {
       </div>
       :
       isAuth?
-      <div to='/auth' className={`${Style.loginContainer} ${Style.loginContainerLogged}` } onClick={() => {setOpen([true, open[1]])}}>
+      <div to='/auth' className={`${Style.loginContainer} ${Style.loginContainerLogged}` } onClick={() => {setOpenBox(!openBox)}}>
         <span>{user.email}</span>
         <div className={Style.icon}>
           <img src={Login} alt={'Фото профиля'}/>
@@ -43,7 +46,11 @@ const HeaderLogin = (props) => {
         </div>
       </div>
     }
-
+    {openBox && 
+    <div>
+      <span onClick={() => {logout(setUser, setIsAuth, backendRoute)}}>Выйти</span>
+    </div>
+    }
     {open[0] &&
       <AuthPage login={true}  />
       }
