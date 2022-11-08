@@ -9,13 +9,13 @@ import Pagination from '../../elements/Pagination/pagination';
 import Style from './searchPage.module.scss';
 
  const SearchPage = () => {
-  // const { products } = useContext(ProductsContext);
+  const { products } = useContext(ProductsContext);
   const [ currentProducts, setCurrentProducts ] = useState([]);
   const [ currentPage, setCurrentPage ] = useState(null);
   const [ totalPages, setTotalPages ] = useState(null);
   const { loading } = useContext(LoadingContext);
   const { mobileView } = useContext(MobileViewContext);
-  const products = useSelector(selectAllProducts);
+  // const products = useSelector(selectAllProducts);
 
   const onPageChanged = (data) => {
     const { currentPage, totalPages, pageLimit } = data;

@@ -40,8 +40,8 @@ import $api from "../../elements/apiAuth/apiAuth";
       const header = new Headers();
       header.append('Content-Type', 'application/json');
       try {
-        await axios
-          .post(props.login?`${backendRoute}api/auth/login`:`${backendRoute}api/auth/authorisation`, values, header)
+        await $api
+          .post(props.login?`api/auth/login`:`api/auth/authorisation`, values, header)
           .then((response) => {
             console.log(response);
             resetForm({});
