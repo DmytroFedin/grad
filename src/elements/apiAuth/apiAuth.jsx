@@ -12,7 +12,7 @@ $api.interceptors.request.use((config) => {
 
 export default $api;
 
-export const logout = async (setUser, setIsAuth, backendRoute) => {
+export const logout = async (setUser, setIsAuth, backendRoute, setOpenBox) => {
   const header = new Headers();
       header.append('Content-Type', 'application/json')
       try {
@@ -22,6 +22,7 @@ export const logout = async (setUser, setIsAuth, backendRoute) => {
               localStorage.removeItem('token');
               setUser({});
               setIsAuth(false);
+              setOpenBox(false)
           })
           .catch((error) => {
             console.log(error.response.data.message);
