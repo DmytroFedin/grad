@@ -47,8 +47,8 @@ const HeaderLogin = (props) => {
       </div>
     }
     {openBox && 
-    <div>
-      <span onClick={() => {logout(setUser, setIsAuth, backendRoute)}}>Выйти</span>
+    <div className={Style.cabinetContainer}>
+      <span className={Style.cabinetButton} onClick={() => {logout(setUser, setIsAuth, backendRoute)}}>Выйти</span>
     </div>
     }
     {open[0] &&

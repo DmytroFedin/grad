@@ -12,7 +12,7 @@ $api.interceptors.request.use((config) => {
 
 export default $api;
 
-export const  logout = async (setUser, setIsAuth, backendRoute) => {
+export const logout = async (setUser, setIsAuth, backendRoute) => {
   const header = new Headers();
       header.append('Content-Type', 'application/json')
       try {

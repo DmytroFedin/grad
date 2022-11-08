@@ -42,3 +42,22 @@
   }
 }
 
+.cabinetContainer {
+  padding: 15px;
+  border: 1px solid $c-black;
+  position: absolute;
+  right: 35px;
+  top: 60px;
+  background: $c-white;
+  color: $c-black;
+  z-index: 100;
+}
+
+.cabinetButton {
+  cursor: pointer;
+
+  &:hover {
+    background-color: $c-light-red;
+  }
+}
+

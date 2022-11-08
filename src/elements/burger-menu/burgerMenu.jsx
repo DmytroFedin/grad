@@ -4,6 +4,7 @@ import HeaderNav from '../../components/header-middle/header-navigation/header-n
 import HeaderLogin from '../../components/header-top/header-login/header-login'
 import { BackendRouteContext, IsAuthContext, LoggedUserContext, RegistrationModalContext } from '../../components/useContext/useContext'
 import AuthPage from '../../pages/auth/auth'
+import { logout } from '../apiAuth/apiAuth'
 import DealerBtns from '../dealerBtns/dealerBtns'
 import Style from './burgerMenu.module.scss'
 
@@ -14,25 +15,6 @@ const BurgerMenu = () => {
   const { backendRoute } = useContext(BackendRouteContext);
   const { setUser } = useContext(LoggedUserContext);
 
- const  logout = async () => {
-  const header = new Headers();
-      header.append('Content-Type', 'application/json')
-      try {
-        await axios
-          .post(`${backendRoute}api/auth/logout`, header)
-          .then((response) => {;
-              localStorage.removeItem('token');
-              setUser({});
-              setIsAuth(false);
-          })
-          .catch((error) => {
-            console.log(error.response.data.message);
-          });
-      } catch (error) {
-        console.log(error);
-      }
-
-}
 
   const dropdownRef = useRef(null);
   const closeBtn = useRef(null);
@@ -65,7 +47,7 @@ const BurgerMenu = () => {
           <hr/>
           <DealerBtns columnMode={true}/>
           {isAuth &&
-          <div onClick={()=>{logout()}}>Выйти</div>
+          <div onClick={()=>{logout(setUser, setIsAuth, backendRoute)}}>Выйти</div>
           }
         </div>
       </div>
