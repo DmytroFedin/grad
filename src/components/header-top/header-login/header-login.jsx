@@ -32,7 +32,7 @@ const HeaderLogin = (props) => {
       </div>
       :
       isAuth?
-      <div to='/auth' className={`${Style.loginContainer} ${Style.loginContainerLogged}` } onClick={() => {setOpenBox(!openBox)}}>
+      <div to='/auth' className={`${Style.loginContainer} ${Style.loginContainerLogged}`} onClick={() => {setOpenBox(!openBox)}}>
         <span>{user.email}</span>
         <div className={Style.icon}>
           <img src={Login} alt={'Фото профиля'}/>

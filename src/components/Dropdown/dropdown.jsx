@@ -4,6 +4,7 @@ import { CSSTransition } from 'react-transition-group';
 import Path from '../routes/menuItem';
 import useBreadcrumbs from 'use-react-router-breadcrumbs';
 import { Link } from 'react-router-dom';
+import { checkIfClickedOutside } from '../../elements/checkOutsideClick/checkOutsideClick';
 
 export const OpenContext = createContext({
   open: true,
@@ -58,17 +59,17 @@ const DropdownMenu = (props) => {
   const dropdownRef = useRef(null);
   const {open, setOpen} = useContext(OpenContext);
   
-  const checkIfClickedOutside = e => {
-    if ( dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-      setOpen(!open)
-    }
-  }
+  // const checkIfClickedOutside = (e, dropdownRef, setOpen) => {
+  //   if ( dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+  //     setOpen(!open)
+  //   }
+  // }
 
   useEffect(() => {
     setMenuHeight(dropdownRef.current?.firstChild.offsetHeight)
-    document.addEventListener("mousedown", checkIfClickedOutside)
+    document.addEventListener("mousedown", checkIfClickedOutside(dropdownRef, setOpen))
     return () => {
-      document.removeEventListener("mousedown", checkIfClickedOutside)
+      document.removeEventListener("mousedown", checkIfClickedOutside(dropdownRef, setOpen))
     }
   }, [open])
 
