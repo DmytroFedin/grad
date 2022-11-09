@@ -1,5 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import styled from "styled-components";
+import { checkIfClickedOutside } from '../../elements/checkOutsideClick/checkOutsideClick';
 import Icon from "../../elements/icon/icon";
 import style from "../../elements/link/link.module.scss"
 
@@ -93,23 +94,18 @@ const position = (pos) => {
     e.target.classList.toggle(style.basicHover)
   }
 
-  const dropdownRef = useRef(null);
+  const InsideClickRef = useRef(null);
 
   useEffect(() => {
-    const checkIfClickedOutside = e => {
-      if ( dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-        setIsOpen(false)
-      }
-    }
-    document.addEventListener("mousedown", checkIfClickedOutside)
+    document.addEventListener("mousedown", (e) => {checkIfClickedOutside(e, InsideClickRef, setIsOpen)})
     return () => {
-      document.removeEventListener("mousedown", checkIfClickedOutside)
+      document.removeEventListener("mousedown", (e) => {checkIfClickedOutside(e, InsideClickRef, setIsOpen)})
     }
   }, [isOpen])
 
   return (
     <>
-      <DropDownContainer ref={dropdownRef}>
+      <DropDownContainer ref={InsideClickRef}>
         <DropDownHeader onClick={toggling}>
           {selectedOption || "City"}
         </DropDownHeader>

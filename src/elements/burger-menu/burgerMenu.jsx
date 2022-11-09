@@ -5,6 +5,7 @@ import HeaderLogin from '../../components/header-top/header-login/header-login'
 import { BackendRouteContext, IsAuthContext, LoggedUserContext, RegistrationModalContext } from '../../components/useContext/useContext'
 import AuthPage from '../../pages/auth/auth'
 import { logout } from '../apiAuth/apiAuth'
+import { checkIfClickedOutside } from '../checkOutsideClick/checkOutsideClick'
 import DealerBtns from '../dealerBtns/dealerBtns'
 import Style from './burgerMenu.module.scss'
 
@@ -14,20 +15,13 @@ const BurgerMenu = () => {
   const { isAuth, setIsAuth } = useContext(IsAuthContext);
   const { backendRoute } = useContext(BackendRouteContext);
   const { setUser } = useContext(LoggedUserContext);
-
-
-  const dropdownRef = useRef(null);
+  const InsideClickRef = useRef(null);
   const closeBtn = useRef(null);
   
-  const checkIfClickedOutside = (e) => {
-    if ( dropdownRef.current && !dropdownRef.current.contains(e.target) && !closeBtn.current.contains(e.target)) {
-      setActive(false)
-    }
-  }
   useEffect(() => {
-    document.addEventListener("mousedown", checkIfClickedOutside)
+    document.addEventListener("mousedown", (e) => {checkIfClickedOutside(e, InsideClickRef, setOpen)})
     return () => {
-      document.removeEventListener("mousedown", checkIfClickedOutside)
+      document.removeEventListener("mousedown", (e) => {checkIfClickedOutside(e, InsideClickRef, setOpen)})
     }
   }, [active])
 
@@ -39,7 +33,7 @@ const BurgerMenu = () => {
         <span className={Style.bar}></span>
         <span className={Style.bar}></span>
       </div>
-      <div className={active ?`${Style.showupContainer} ${Style.showupContainerActive}`:`${Style.showupContainer}`} ref={dropdownRef}>
+      <div className={active ?`${Style.showupContainer} ${Style.showupContainerActive}`:`${Style.showupContainer}`} ref={InsideClickRef}>
         <div className={Style.wrapper}>
           <HeaderLogin open={active} setOpen={setActive} menuMode={true}/>
           <hr/>

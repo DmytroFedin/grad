@@ -56,20 +56,14 @@ const NavItem = (props) => {
 const DropdownMenu = (props) => {
   const [activeMenu, setActiveMenu] = useState('main');
   const [menuHeight, setMenuHeight] = useState(null);
-  const dropdownRef = useRef(null);
+  const InsideClickRef = useRef(null);
   const {open, setOpen} = useContext(OpenContext);
-  
-  // const checkIfClickedOutside = (e, dropdownRef, setOpen) => {
-  //   if ( dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-  //     setOpen(!open)
-  //   }
-  // }
 
   useEffect(() => {
-    setMenuHeight(dropdownRef.current?.firstChild.offsetHeight)
-    document.addEventListener("mousedown", (e) => {checkIfClickedOutside(e, dropdownRef, setOpen)})
+    setMenuHeight(InsideClickRef.current?.firstChild.offsetHeight)
+    document.addEventListener("mousedown", (e) => {checkIfClickedOutside(e, InsideClickRef, setOpen)})
     return () => {
-      document.removeEventListener("mousedown", (e) => {checkIfClickedOutside(e, dropdownRef, setOpen)})
+      document.removeEventListener("mousedown", (e) => {checkIfClickedOutside(e, InsideClickRef, setOpen)})
     }
   }, [open])
 
@@ -89,7 +83,7 @@ const DropdownMenu = (props) => {
       }
       
   return (
-    <div className="dropdown" style={{ height: menuHeight +30 }} ref={dropdownRef}>
+    <div className="dropdown" style={{ height: menuHeight +30 }} ref={InsideClickRef}>
 
       <CSSTransition
         in={activeMenu === 'main'}

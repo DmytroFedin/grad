@@ -9,20 +9,15 @@ import {ReactComponent as Facebook} from "../../assets/icons/facebook.svg";
 import {ReactComponent as Checkmark} from "../../assets/icons/checkmark.svg";
 import CloseBtn from "../../elements/closeBtn/closeBtn";
 import $api from "../../elements/apiAuth/apiAuth";
+import { checkIfClickedOutside } from "../../elements/checkOutsideClick/checkOutsideClick";
 
  const AuthPage = (props) =>{
   const { setUser } = useContext(LoggedUserContext);
   const { setIsAuth } = useContext(IsAuthContext);
   const { backendRoute } = useContext(BackendRouteContext);
   const [ inputType, setInputType ] = useState('password')
-  const dropdownRef = useRef(null);
+  const InsideClickRef = useRef(null);
   const { setOpen } = useContext(RegistrationModalContext);
-  
-  const checkIfClickedOutside = (e) => {
-    if ( dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-      setOpen([false, false])
-    }
-  }
 
   const checkInputType = () => {
     if (inputType === 'password') {
@@ -67,8 +62,8 @@ import $api from "../../elements/apiAuth/apiAuth";
       }
     }
     return (
-      <div className={Style.container} onClick={(e)=>{checkIfClickedOutside(e)}}>
-      <div className={Style.authPage} ref={dropdownRef}>
+      <div className={Style.container} onClick={(e)=>{checkIfClickedOutside(e, InsideClickRef, setOpen)}}>
+      <div className={Style.authPage} ref={InsideClickRef}>
         <h1 className={Style.heading}>{props.login?'Вход в личный кабинет':'Регистрация'}</h1>
         <DealerBtns enterBtn={true}/>
         <div className={Style.additionalEnter}>
