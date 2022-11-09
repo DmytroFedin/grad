@@ -37,6 +37,10 @@ const HeaderLogin = (props) => {
         <div className={Style.icon}>
           <img src={Login} alt={'Фото профиля'}/>
         </div>
+        {openBox && 
+          <div className={Style.cabinetContainer}>
+            <span className={Style.cabinetButton} onClick={() => {logout(setUser, setIsAuth, backendRoute, setOpenBox)}}>Выйти</span>
+          </div>}
       </div>
       :
       <div to='/auth' className={Style.loginContainer} onClick={() => {setOpen([true, open[1]])}}>
@@ -46,11 +50,7 @@ const HeaderLogin = (props) => {
         </div>
       </div>
     }
-    {openBox && 
-    <div className={Style.cabinetContainer}>
-      <span className={Style.cabinetButton} onClick={() => {logout(setUser, setIsAuth, backendRoute, setOpenBox)}}>Выйти</span>
-    </div>
-    }
+    
     {open[0] &&
       <AuthPage login={true}  />
       }
