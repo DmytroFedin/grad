@@ -65,11 +65,11 @@ const DropdownMenu = (props) => {
   //   }
   // }
 
-  useEffect((e) => {
+  useEffect(() => {
     setMenuHeight(dropdownRef.current?.firstChild.offsetHeight)
-    document.addEventListener("mousedown", checkIfClickedOutside(e, dropdownRef, setOpen))
+    document.addEventListener("mousedown", (e) => {checkIfClickedOutside(e, dropdownRef, setOpen)})
     return () => {
-      document.removeEventListener("mousedown", checkIfClickedOutside(e, dropdownRef, setOpen))
+      document.removeEventListener("mousedown", (e) => {checkIfClickedOutside(e, dropdownRef, setOpen)})
     }
   }, [open])
 
